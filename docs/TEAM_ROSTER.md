@@ -28,7 +28,7 @@
 | 16 | Raunak Singh | raunaksin9890-gif | Team 3 | team-intelligence | ✅ | write | ✅ | Intern | 2 | 4 | ACTIVE |
 | 17 | Pankaj Yadav | Pannkajyadhav333 | Team 3 | team-intelligence | ✅ | write | ✅ | Intern | 4 | 11 | ACTIVE |
 | 18 | Parth Vichare | parthvichare20 | Team 3 | team-intelligence | ✅ | write | ✅ | Intern | 5 | 12 | ACTIVE |
-| 19 | Sakshi Lahane | lahanesakshi-create | Team 3 | team-intelligence | ⏳ Invited | ⏳ Invited | ⏳ Pending | Intern | 1 | 2 | INVITED |
+| 19 | Sakshi Lahane | lahanesakshi-create | Team 3 | team-intelligence | ⏳ Invited | ⏳ Invited | ⏳ Pending | Intern | 2 | 2 | INVITED |
 | 20 | Sumeet More | sumeetmore334-rgb | Team 4 | team-ai-verification | ✅ | write | ✅ | Head Intern | 4 | 7 | ACTIVE |
 | 21 | Anuj More | anujmore2006-collab | Team 4 | team-ai-verification | ✅ | write | ✅ | Intern | 4 | 7 | ACTIVE |
 | 22 | Akash Upade | Akash-Upade | Team 4 | team-ai-verification | ✅ | write | ✅ | Intern | 4 | 10 | ACTIVE |
