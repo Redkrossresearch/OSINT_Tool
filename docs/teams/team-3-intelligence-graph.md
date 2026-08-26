@@ -2,51 +2,125 @@
 
 ## Mission
 
-Extract entities from observations, resolve them to canonical forms, build relationships between them, and maintain a queryable intelligence graph that powers the investigation.
+Convert observations into structured intelligence. Extract entities, resolve them to canonical forms, build relationships, and maintain a queryable intelligence graph.
 
 ---
 
-## Responsibilities
+## Team Responsibilities
 
-- Entity extraction from observations
-- Entity normalization and canonicalization
-- Entity resolution (same-entity detection across sources)
-- Confidence scoring for entities and relationships
-- Relationship extraction from observations
-- Temporal relationship tracking (valid_from, valid_to)
-- Graph storage (PostgreSQL-based for MVP)
-- Graph queries (traversal, shortest path, neighborhood)
-- Graph API
-- Timeline generation from graph events
-- Tests
-- Documentation
+1. Entity extraction from observations
+2. Entity normalization and canonicalization
+3. Entity resolution (same-entity detection)
+4. Confidence scoring
+5. Relationship extraction
+6. Graph model and storage
+7. Graph queries (traversal, path, neighborhood)
+8. Temporal relationships
+9. Investigation timeline
+10. Entity APIs
+11. Graph APIs
+12. Intelligence tests
+13. Documentation
 
 ---
 
-## Owned Directories
+## Team Ownership
 
 ```
-services/intelligence/   — Entity extraction, resolution, normalization
-services/graph/          — Graph storage, queries, API
-packages/entities/       — Entity type definitions and schemas
-docs/intelligence/       — Intelligence documentation
+services/intelligence/    — Entity extraction, normalization, resolution
+services/graph/           — Graph storage, queries, API
+packages/entities/        — Entity type definitions and schemas
+docs/intelligence/        — Intelligence documentation
 ```
+
+---
+
+## Team Boundaries
+
+### Team 3 OWNS
+
+- All entity logic
+- All relationship logic
+- Graph storage and queries
+- Timeline generation
+- Entity and Graph APIs
+
+### Team 3 DOES NOT OWN
+
+- `services/core/` — Team 1
+- `services/evidence/` — Team 1
+- `packages/schemas/` — Team 1
+- `connectors/` — Team 2
+- `services/ai/` — Team 4
+- `apps/web/` — Team 5
+
+---
+
+## What Team 3 Must NOT Modify
+
+- Core schemas (`packages/schemas/`) without Team 1 review
+- Database migrations (Team 1 only for core DB)
+- Connector implementations (`connectors/`)
+- AI agent code (`services/ai/`)
+- Frontend code (`apps/web/`)
+- Evidence storage logic (Team 1 only)
+
+---
+
+## Dependencies
+
+| Dependency | Provider | What |
+|---|---|---|
+| Observation schema | Team 1 | Input for entity extraction |
+| Evidence schema | Team 1 | Evidence structure |
+| Entity schema | Team 1 (via `packages/schemas/`) | Entity type definitions |
+| Observations | Team 2 | Raw data to process |
+
+---
+
+## Dependents
+
+| Team | What They Consume |
+|---|---|
+| Team 4 (AI) | Entities, relationships, graph data |
+| Team 5 (Product) | Entity viewer, graph visualization, timeline |
+
+---
+
+## Interfaces With Other Teams
+
+### Outgoing (Team 3 provides)
+
+| Interface | Consumer | Description |
+|---|---|---|
+| Entity API | Team 4, Team 5 | CRUD + search for entities |
+| Graph API | Team 4, Team 5 | Graph queries, traversal |
+| Timeline API | Team 5 | Chronological events |
+| Entity data | Team 4 | Entities for AI correlation |
+
+### Incoming (Team 3 receives)
+
+| Interface | Provider | Description |
+|---|---|---|
+| Observations | Team 2 | Raw data for extraction |
+| Evidence | Team 1 | Evidence for entity linking |
+| Entity schema | Team 1 | Type definitions |
 
 ---
 
 ## Entity Types
 
-| Entity Type | Description | Key Attributes |
-|---|---|---|
-| Person | Individual human | name, aliases, emails, social_profiles |
-| Company | Organization/business | name, domain, registration, industry |
-| Domain | Internet domain | name, registrar, creation_date |
-| IP | IP address | address, version, geolocation |
-| Email | Email address | address, domain |
-| URL | Web URL | url, domain, path |
-| Repository | Code repository | owner, name, url, language |
-| Technology | Software/hardware | name, version, category |
-| Location | Physical place | name, coordinates, country |
+| Entity Type | Key Attributes |
+|---|---|
+| Person | name, aliases, emails, social_profiles |
+| Company | name, domain, registration, industry |
+| Domain | name, registrar, creation_date |
+| IP | address, version, geolocation |
+| Email | address, domain |
+| URL | url, domain, path |
+| Repository | owner, name, url, language |
+| Technology | name, version, category |
+| Location | name, coordinates, country |
 
 ---
 
@@ -65,78 +139,110 @@ docs/intelligence/       — Intelligence documentation
 
 ---
 
-## Entity Resolution Strategy (MVP)
+## CRITICAL RULE — Entity Resolution
 
-1. **Exact match**: Same normalized string → same entity
-2. **Fuzzy match**: Levenshtein distance < threshold → candidate match
-3. **Shared attribute match**: Same email/domain → likely same person
-4. **Confidence decay**: Each match has a confidence score
-5. **No silent merges**: All merges require confidence > threshold OR human confirmation
+**Never silently merge entities.**
 
----
-
-## Graph Model (MVP — PostgreSQL)
-
-```sql
--- Entities table
-CREATE TABLE entities (
-  id UUID PRIMARY KEY,
-  type VARCHAR(50) NOT NULL,
-  canonical_name TEXT NOT NULL,
-  attributes JSONB NOT NULL DEFAULT '{}',
-  confidence FLOAT NOT NULL DEFAULT 0.0,
-  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
-
--- Relationships table
-CREATE TABLE relationships (
-  id UUID PRIMARY KEY,
-  source_entity_id UUID NOT NULL REFERENCES entities(id),
-  target_entity_id UUID NOT NULL REFERENCES entities(id),
-  type VARCHAR(50) NOT NULL,
-  confidence FLOAT NOT NULL DEFAULT 0.0,
-  evidence_id UUID NOT NULL,
-  valid_from TIMESTAMPTZ,
-  valid_to TIMESTAMPTZ,
-  attributes JSONB NOT NULL DEFAULT '{}',
-  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
-```
+Every resolution MUST have:
+- `confidence` — numeric score (0.0–1.0)
+- `evidence` — what evidence supports the merge
+- `reason` — human-readable explanation
+- `source` — which data source provided the match
 
 ---
 
-## Dependencies
+## Task List
 
-- Team 1: Evidence schema, Observation schema, Entity schema
-- Team 2: Observations from connectors (input for entity extraction)
+See `docs/tasks/team-3-intelligence.md` for the complete task list.
 
-## Dependents
-
-- Team 4 (AI): Uses graph for correlation and analysis
-- Team 5 (Product): Displays entity viewer, graph visualization, timeline
-
----
-
-## API Endpoints (Planned)
-
-| Endpoint | Method | Description |
+| Task | Title | Difficulty |
 |---|---|---|
-| `/api/entities` | GET | List entities for investigation |
-| `/api/entities/:id` | GET | Get entity details |
-| `/api/entities` | POST | Create entity (from extraction) |
-| `/api/relationships` | GET | List relationships |
-| `/api/graph/:investigation_id` | GET | Get full graph for investigation |
-| `/api/graph/:investigation_id/neighbors/:entity_id` | GET | Get entity neighborhood |
-| `/api/timeline/:investigation_id` | GET | Get timeline |
+| T3-001 | Entity schema | Medium |
+| T3-002 | Entity normalization | Medium |
+| T3-003 | Entity extraction | Hard |
+| T3-004 | Entity confidence | Medium |
+| T3-005 | Entity resolution | Hard |
+| T3-006 | Relationship schema | Medium |
+| T3-007 | Relationship extraction | Hard |
+| T3-008 | Graph schema | Medium |
+| T3-009 | Graph storage | Hard |
+| T3-010 | Graph queries | Hard |
+| T3-011 | Temporal relationships | Medium |
+| T3-012 | Investigation timeline | Medium |
+| T3-013 | Entity API | Hard |
+| T3-014 | Graph API | Hard |
+| T3-015 | Resolution tests | Hard |
+| T3-016 | Graph tests | Hard |
+| T3-017 | Integration tests | Hard |
+| T3-018 | Documentation | Easy |
 
 ---
 
-## Testing Strategy
+## Git Workflow
+
+1. Feature branch from `team/3-intelligence`
+2. Implement feature
+3. Write tests
+4. Self-review
+5. PR to `team/3-intelligence`
+6. Team lead reviews
+7. Merge to `team/3-intelligence`
+8. Technical architect reviews `team/3-intelligence` → `main`
+
+**Never push directly to `main`.**
+
+---
+
+## Testing Expectations
 
 - Unit tests for entity extraction
 - Unit tests for normalization
 - Unit tests for resolution logic
 - Integration tests for graph queries
-- Contract tests against Entity and Relationship schemas
+- Contract tests against Entity/Relationship schemas
 - Edge case tests (duplicate entities, conflicting data, temporal overlap)
+
+---
+
+## Documentation Expectations
+
+- Entity type reference
+- Relationship type reference
+- Graph query examples
+- Resolution algorithm documentation
+- API endpoint documentation
+
+---
+
+## Security Rules
+
+- No secrets in code
+- All inputs validated via Zod
+- Graph queries bounded (no infinite traversal)
+- Entity resolution auditable
+- No data modification without provenance
+
+---
+
+## AI Coding Rules
+
+- Use OpenCode + Ollama (free/local only)
+- No paid AI APIs
+- AI explains before modifying
+- AI suggests implementation plan first
+- Human reviews all AI output
+- AI never silently merges entities
+- AI never decides resolution thresholds alone
+
+---
+
+## Definition of Done
+
+- [ ] Code compiles with TypeScript strict mode
+- [ ] All tests pass
+- [ ] Entity resolution has confidence scores
+- [ ] Every merge has evidence reference
+- [ ] Graph queries are bounded
+- [ ] Documentation updated
+- [ ] PR reviewed and approved
+- [ ] No silent entity merges
