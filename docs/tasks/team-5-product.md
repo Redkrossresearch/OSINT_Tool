@@ -6,6 +6,10 @@
 **Objective:** Initialize the Next.js 14+ application with App Router, TypeScript, Tailwind CSS, and shadcn/ui.
 **Why:** Frontend foundation for the investigation product.
 
+**Primary Owner:** `Ishauparkar13`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** Team lead
+
 ### Dependencies
 T1-003 (Schema package)
 
@@ -58,6 +62,10 @@ Ask AI to explain Next.js App Router patterns.
 **Team:** Team 5 — Product + Frontend + Reporting
 **Objective:** Build the application layout with navigation and routing.
 **Why:** Users need consistent navigation across the application.
+
+**Primary Owner:** `Ishauparkar13`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** Team lead
 
 ### Dependencies
 T5-001
@@ -112,6 +120,10 @@ Ask AI to explain Next.js layout patterns.
 **Objective:** Build the dashboard page showing case list and recent investigations.
 **Why:** Dashboard is the primary entry point for users.
 
+**Primary Owner:** `aryanbhosale20`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
+
 ### Dependencies
 T5-002, T1-017 (Case API)
 
@@ -165,6 +177,10 @@ Ask AI to explain React data fetching patterns.
 **Team:** Team 5 — Product + Frontend + Reporting
 **Objective:** Build case creation form with validation.
 **Why:** Users need to create cases to start investigations.
+
+**Primary Owner:** `aryanbhosale20`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
 
 ### Dependencies
 T5-002, T1-017
@@ -221,6 +237,10 @@ Ask AI to explain React form patterns with validation.
 **Objective:** Build investigation creation form with objective intake.
 **Why:** Investigations are created within cases with specific objectives.
 
+**Primary Owner:** `aryanbhosale20`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
+
 ### Dependencies
 T5-002, T1-017, T1-005
 
@@ -274,6 +294,10 @@ Ask AI to explain discriminated form patterns.
 **Team:** Team 5 — Product + Frontend + Reporting
 **Objective:** Build investigation detail view with progress tracking.
 **Why:** Users need to monitor investigation progress.
+
+**Primary Owner:** `dakshjadyar`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
 
 ### Dependencies
 T5-002, T1-017
@@ -329,6 +353,10 @@ Ask AI to explain progress indicator patterns.
 **Objective:** Build evidence list and detail viewer.
 **Why:** Users need to examine collected evidence.
 
+**Primary Owner:** `dakshjadyar`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
+
 ### Dependencies
 T5-002, T1-018
 
@@ -382,6 +410,10 @@ Ask AI to explain evidence display patterns.
 **Objective:** Build entity list and detail viewer.
 **Why:** Users need to examine extracted entities.
 
+**Primary Owner:** `Deepkasare`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
+
 ### Dependencies
 T5-002, T3-014
 
@@ -434,6 +466,10 @@ Ask AI to explain entity display patterns.
 **Team:** Team 5 — Product + Frontend + Reporting
 **Objective:** Build relationship graph visualization.
 **Why:** Graph visualization reveals connections between entities.
+
+**Primary Owner:** `Deepkasare`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
 
 ### Dependencies
 T5-002, T3-011
@@ -489,6 +525,10 @@ Ask AI to explain force-directed graph visualization.
 **Objective:** Build investigation timeline visualization.
 **Why:** Timeline shows chronological investigation progress.
 
+**Primary Owner:** `Deepkasare`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
+
 ### Dependencies
 T5-002, T3-013
 
@@ -541,6 +581,10 @@ Ask AI to explain timeline visualization patterns.
 **Team:** Team 5 — Product + Frontend + Reporting
 **Objective:** Build findings display with verification status.
 **Why:** Users need to review AI-generated findings.
+
+**Primary Owner:** `krishnasondigala-sys`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
 
 ### Dependencies
 T5-002, T4-011
@@ -595,6 +639,10 @@ Ask AI to explain findings display patterns.
 **Objective:** Build verification workflow UI for human review of AI findings.
 **Why:** Humans must review and verify AI findings.
 
+**Primary Owner:** `krishnasondigala-sys`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
+
 ### Dependencies
 T5-011, T4-013
 
@@ -647,6 +695,10 @@ Ask AI to explain review workflow UI patterns.
 **Objective:** Build report generation service.
 **Why:** Reports are the final output of an investigation.
 
+**Primary Owner:** `krishnasondigala-sys`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
+
 ### Dependencies
 T5-002, T1-018, T3-014, T4-011
 
@@ -697,6 +749,10 @@ Ask AI to explain report generation patterns.
 **Team:** Team 5 — Product + Frontend + Reporting
 **Objective:** Implement report export functionality.
 **Why:** Users need to export reports for sharing and archival.
+
+**Primary Owner:** `krishnasondigala-sys`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
 
 ### Dependencies
 T5-013
@@ -749,6 +805,10 @@ Ask AI to explain file export patterns.
 **Objective:** Implement consistent error and loading states across all pages.
 **Why:** Good UX requires clear feedback during loading and errors.
 
+**Primary Owner:** `dakshjadyar`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Ishauparkar13`
+
 ### Dependencies
 T5-002
 
@@ -799,6 +859,10 @@ Ask AI to explain React error boundary patterns.
 **Team:** Team 5 — Product + Frontend + Reporting
 **Objective:** Ensure WCAG 2.1 AA accessibility compliance.
 **Why:** Accessibility ensures the product is usable by everyone.
+
+**Primary Owner:** `dakshjadyar`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Deepkasare`
 
 ### Dependencies
 T5-002
@@ -852,6 +916,10 @@ Ask AI to explain WCAG 2.1 AA requirements.
 **Objective:** Write end-to-end tests for critical user flows.
 **Why:** E2E tests verify the complete user experience.
 
+**Primary Owner:** `Deepkasare`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `krishnasondigala-sys`
+
 ### Dependencies
 T5-002 through T5-016
 
@@ -902,6 +970,10 @@ Ask AI to explain Playwright E2E testing patterns.
 **Objective:** Write integration tests for frontend API interactions.
 **Why:** Integration tests verify frontend-backend communication.
 
+**Primary Owner:** `krishnasondigala-sys`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** `Deepkasare`
+
 ### Dependencies
 T5-017
 
@@ -951,6 +1023,10 @@ Ask AI to explain MSW mocking patterns.
 **Team:** Team 5 — Product + Frontend + Reporting
 **Objective:** Write documentation for frontend setup, routing, and components.
 **Why:** Clear documentation helps developers work on the frontend.
+
+**Primary Owner:** `Ishauparkar13`
+**Reviewer:** Head Intern (`Ishauparkar13`)
+**Backup:** Team lead
 
 ### Dependencies
 T5-018

@@ -231,3 +231,17 @@ See `docs/tasks/team-2-connectors.md` for the complete task list.
 - [ ] Documentation updated
 - [ ] PR reviewed and approved
 - [ ] Connector produces valid Observations
+
+---
+
+## Current Team Members
+
+Head Intern: Riddhi Sawant (`riddhisawant305-jpg`)
+
+| Member | Role | Task Allocations |
+|---|---|---|
+| riddhisawant305-jpg | Head Intern | T2-001, T2-002 |
+| yadavchinmay45-cloud | Intern | T2-005, T2-006 |
+| AaryanDhotre2326 | Intern | T2-007, T2-008 |
+| antarahire22-creator | Intern | T2-009, T2-010 |
+| darshankamble0628-coder | Intern | T2-003, T2-004, T2-011, T2-012 |

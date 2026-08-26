@@ -3,7 +3,9 @@
 ## T4-001: Model Abstraction Layer
 
 **TEAM:** 4 — AI + Verification
-**OWNER:** Pending assignment
+**Primary Owner:** `sumeetmore334-rgb`
+**Reviewer:** Head Intern (`sumeetmore334-rgb`)
+**Backup:** Team lead
 **STATUS:** NOT STARTED
 
 ### Objective
@@ -44,7 +46,9 @@ T1-001
 ## T4-002: Ollama Integration + Fallback
 
 **TEAM:** 4 — AI + Verification
-**OWNER:** Pending assignment
+**Primary Owner:** `sumeetmore334-rgb`
+**Reviewer:** Head Intern (`sumeetmore334-rgb`)
+**Backup:** Team lead
 **STATUS:** NOT STARTED
 
 ### Objective
@@ -84,7 +88,9 @@ T4-001
 ## T4-003: Planner Agent
 
 **TEAM:** 4 — AI + Verification
-**OWNER:** Pending assignment
+**Primary Owner:** `anujmore2006-collab`
+**Reviewer:** Head Intern (`sumeetmore334-rgb`)
+**Backup:** `sumeetmore334-rgb`
 **STATUS:** NOT STARTED
 
 ### Objective
@@ -122,7 +128,9 @@ T4-001, T1-004
 ## T4-004: Analysis Agent
 
 **TEAM:** 4 — AI + Verification
-**OWNER:** Pending assignment
+**Primary Owner:** `anujmore2006-collab`
+**Reviewer:** Head Intern (`sumeetmore334-rgb`)
+**Backup:** `sumeetmore334-rgb`
 **STATUS:** NOT STARTED
 
 ### Objective
@@ -160,7 +168,9 @@ T4-001, T1-006
 ## T4-005: Correlation Agent
 
 **TEAM:** 4 — AI + Verification
-**OWNER:** Pending assignment
+**Primary Owner:** `anujmore2006-collab`
+**Reviewer:** Head Intern (`sumeetmore334-rgb`)
+**Backup:** `sumeetmore334-rgb`
 **STATUS:** NOT STARTED
 
 ### Objective
@@ -198,7 +208,9 @@ T4-001, T4-004
 ## T4-006: Supervisor Agent
 
 **TEAM:** 4 — AI + Verification
-**OWNER:** Pending assignment
+**Primary Owner:** `Akash-Upade`
+**Reviewer:** Head Intern (`sumeetmore334-rgb`)
+**Backup:** `sumeetmore334-rgb`
 **STATUS:** NOT STARTED
 
 ### Objective
@@ -238,7 +250,9 @@ T4-003, T4-004, T4-005
 ## T4-007: Contradiction Detection
 
 **TEAM:** 4 — AI + Verification
-**OWNER:** Pending assignment
+**Primary Owner:** `Akash-Upade`
+**Reviewer:** Head Intern (`sumeetmore334-rgb`)
+**Backup:** `sumeetmore334-rgb`
 **STATUS:** NOT STARTED
 
 ### Objective
@@ -274,7 +288,9 @@ T4-001, T1-006
 ## T4-008: Verification Workflow
 
 **TEAM:** 4 — AI + Verification
-**OWNER:** Pending assignment
+**Primary Owner:** `Akash-Upade`
+**Reviewer:** Head Intern (`sumeetmore334-rgb`)
+**Backup:** `sumeetmore334-rgb`
 **STATUS:** NOT STARTED
 
 ### Objective
@@ -312,7 +328,9 @@ T4-007
 ## T4-009: AI Logging + Token Tracking
 
 **TEAM:** 4 — AI + Verification
-**OWNER:** Pending assignment
+**Primary Owner:** `Akash-Upade`
+**Reviewer:** Head Intern (`sumeetmore334-rgb`)
+**Backup:** `sumeetmore334-rgb`
 **STATUS:** NOT STARTED
 
 ### Objective
@@ -351,7 +369,9 @@ T4-001, T1-002
 ## T4-010: AI Evaluation Tests
 
 **TEAM:** 4 — AI + Verification
-**OWNER:** Pending assignment
+**Primary Owner:** `shraddhamahindrakar217-cloud`
+**Reviewer:** Head Intern (`sumeetmore334-rgb`)
+**Backup:** `sumeetmore334-rgb`
 **STATUS:** NOT STARTED
 
 ### Objective

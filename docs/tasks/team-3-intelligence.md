@@ -6,6 +6,10 @@
 **Objective:** Define entity type definitions, attributes, and Zod validation schemas.
 **Why:** Entity types are the foundation of intelligence extraction.
 
+**Primary Owner:** `hirveabhishek2006-design`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** Team lead
+
 ### Dependencies
 T1-003 (Schema package)
 
@@ -57,6 +61,10 @@ Ask AI to explain Zod discriminated unions for entity types.
 **Team:** Team 3 — Intelligence + Entity + Graph
 **Objective:** Implement entity normalization and canonicalization logic.
 **Why:** Entities from different sources need consistent formatting for resolution.
+
+**Primary Owner:** `hirveabhishek2006-design`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `katkarsujal1-design`
 
 ### Dependencies
 T3-001
@@ -110,6 +118,10 @@ Ask AI to explain Unicode normalization and string canonicalization.
 **Team:** Team 3 — Intelligence + Entity + Graph
 **Objective:** Implement entity extraction from observation data.
 **Why:** Extracting entities from raw data is the first step of intelligence analysis.
+
+**Primary Owner:** `katkarsujal1-design`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `hirveabhishek2006-design`
 
 ### Dependencies
 T3-001, T1-008 (Observation schema)
@@ -165,6 +177,10 @@ Ask AI to explain regex patterns for entity extraction.
 **Objective:** Implement confidence scoring for extracted entities.
 **Why:** Confidence scores indicate how certain the system is about an entity.
 
+**Primary Owner:** `katkarsujal1-design`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `hirveabhishek2006-design`
+
 ### Dependencies
 T3-001
 
@@ -215,6 +231,10 @@ Ask AI to explain confidence scoring methodologies.
 **Team:** Team 3 — Intelligence + Entity + Graph
 **Objective:** Implement entity resolution (same-entity detection across sources).
 **Why:** The same real-world entity may appear differently across sources.
+
+**Primary Owner:** `raunaksin9890-gif`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `hirveabhishek2006-design`
 
 ### Dependencies
 T3-003, T3-004
@@ -272,6 +292,10 @@ Ask AI to explain entity resolution algorithms (Levenshtein, Jaro-Winkler).
 **Objective:** Define relationship type definitions and validation schemas.
 **Why:** Relationships connect entities and form the intelligence graph.
 
+**Primary Owner:** `raunaksin9890-gif`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `hirveabhishek2006-design`
+
 ### Dependencies
 T3-001
 
@@ -324,6 +348,10 @@ Ask AI to explain typed relationship models.
 **Objective:** Implement relationship extraction from observations.
 **Why:** Relationships between entities reveal connections and patterns.
 
+**Primary Owner:** `Pannkajyadhav333`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `hirveabhishek2006-design`
+
 ### Dependencies
 T3-001, T3-006, T1-008
 
@@ -374,6 +402,10 @@ Ask AI to explain relationship extraction patterns.
 **Team:** Team 3 — Intelligence + Entity + Graph
 **Objective:** Create PostgreSQL schema for graph storage.
 **Why:** Graph data needs persistent storage with efficient querying.
+
+**Primary Owner:** `Pannkajyadhav333`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `parthvichare20`
 
 ### Dependencies
 T1-015 (Database foundation), T3-001, T3-006
@@ -427,6 +459,10 @@ Ask AI to explain graph storage in relational databases.
 **Objective:** Implement graph storage service (add/remove entities and relationships).
 **Why:** The graph service manages the intelligence graph data.
 
+**Primary Owner:** `parthvichare20`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `Pannkajyadhav333`
+
 ### Dependencies
 T3-008
 
@@ -477,6 +513,10 @@ Ask AI to explain graph CRUD operations.
 **Team:** Team 3 — Intelligence + Entity + Graph
 **Objective:** Implement graph query functions (traversal, path finding, neighborhood).
 **Why:** Queries power the intelligence analysis and visualization.
+
+**Primary Owner:** `parthvichare20`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `Pannkajyadhav333`
 
 ### Dependencies
 T3-009
@@ -532,6 +572,10 @@ Ask AI to explain graph traversal algorithms (BFS, DFS).
 **Objective:** Expose graph data via REST API.
 **Why:** API is how the frontend and other services consume graph data.
 
+**Primary Owner:** `parthvichare20`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `hirveabhishek2006-design`
+
 ### Dependencies
 T3-010
 
@@ -586,6 +630,10 @@ Ask AI to explain REST API pagination patterns.
 **Objective:** Implement temporal relationship tracking (valid_from, valid_to).
 **Why:** Intelligence relationships change over time. Temporal tracking captures this.
 
+**Primary Owner:** `Pannkajyadhav333`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `parthvichare20`
+
 ### Dependencies
 T3-008
 
@@ -636,6 +684,10 @@ Ask AI to explain temporal data modeling.
 **Team:** Team 3 — Intelligence + Entity + Graph
 **Objective:** Implement investigation timeline generation from graph events.
 **Why:** Timeline provides chronological view of investigation progress.
+
+**Primary Owner:** `parthvichare20`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `hirveabhishek2006-design`
 
 ### Dependencies
 T3-009, T1-013 (Audit events)
@@ -690,6 +742,10 @@ Ask AI to explain timeline data aggregation patterns.
 **Objective:** Expose entity data via REST API with search and filtering.
 **Why:** Entity API powers the entity viewer and AI correlation.
 
+**Primary Owner:** `parthvichare20`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `hirveabhishek2006-design`
+
 ### Dependencies
 T3-009
 
@@ -740,6 +796,10 @@ Ask AI to explain search API patterns.
 **Objective:** Write comprehensive tests for entity resolution edge cases.
 **Why:** Entity resolution is complex. Thorough testing prevents silent merges and data corruption.
 
+**Primary Owner:** `katkarsujal1-design`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `raunaksin9890-gif`
+
 ### Dependencies
 T3-005
 
@@ -788,6 +848,10 @@ Ask AI to explain entity resolution test patterns.
 **Team:** Team 3 — Intelligence + Entity + Graph
 **Objective:** Write comprehensive tests for graph queries and storage.
 **Why:** Graph operations are complex. Tests ensure correctness.
+
+**Primary Owner:** `parthvichare20`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `Pannkajyadhav333`
 
 ### Dependencies
 T3-010, T3-011
@@ -838,6 +902,10 @@ Ask AI to explain graph testing patterns.
 **Objective:** Write end-to-end tests for the intelligence pipeline.
 **Why:** Integration tests verify the full observation → entity → graph pipeline.
 
+**Primary Owner:** `Pannkajyadhav333`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** `parthvichare20`
+
 ### Dependencies
 T3-003 through T3-014
 
@@ -887,6 +955,10 @@ Ask AI to explain integration testing for data pipelines.
 **Team:** Team 3 — Intelligence + Entity + Graph
 **Objective:** Write documentation for entity types, graph queries, and intelligence pipeline.
 **Why:** Clear documentation helps developers understand and use the intelligence system.
+
+**Primary Owner:** `hirveabhishek2006-design`
+**Reviewer:** Head Intern (`hirveabhishek2006-design`)
+**Backup:** Team lead
 
 ### Dependencies
 T3-017

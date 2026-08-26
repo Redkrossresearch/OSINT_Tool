@@ -6,6 +6,10 @@
 **Objective:** Define the Connector interface and build the base framework (lifecycle, configuration, error handling).
 **Why:** Every connector must follow the same contract for the system to work.
 
+**Primary Owner:** `riddhisawant305-jpg`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** Team lead
+
 ### Dependencies
 T1-008 (Observation schema)
 
@@ -60,6 +64,10 @@ Ask AI to explain the Template Method design pattern before implementing. Ask fo
 **Objective:** Define the standardized result format for all connectors.
 **Why:** Consistent output format ensures Team 3 and Team 4 can process all observations uniformly.
 
+**Primary Owner:** `riddhisawant305-jpg`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** Team lead
+
 ### Dependencies
 T2-001, T1-008
 
@@ -109,6 +117,10 @@ Ask AI to explain error union types in TypeScript.
 **Team:** Team 2 — Connectors + Collection
 **Objective:** Implement connector registration, discovery, and health monitoring.
 **Why:** The system needs to know which connectors are available and healthy.
+
+**Primary Owner:** `darshankamble0628-coder`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
 
 ### Dependencies
 T2-001
@@ -162,6 +174,10 @@ Ask AI to explain service registry patterns.
 **Objective:** Implement connector configuration management (environment-based, per-connector).
 **Why:** Each connector needs specific configuration (API endpoints, rate limits, etc.).
 
+**Primary Owner:** `darshankamble0628-coder`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
+
 ### Dependencies
 T2-001
 
@@ -212,6 +228,10 @@ Ask AI to explain environment-based configuration patterns.
 **Team:** Team 2 — Connectors + Collection
 **Objective:** Implement public web page fetching connector with SSRF protection.
 **Why:** Web pages are a primary OSINT source.
+
+**Primary Owner:** `yadavchinmay45-cloud`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
 
 ### Dependencies
 T2-001, T1-008
@@ -270,6 +290,10 @@ Ask AI to explain SSRF protection techniques and safe URL parsing.
 **Objective:** Implement public web search connector using DuckDuckGo HTML endpoint.
 **Why:** Search results are a primary intelligence collection source.
 
+**Primary Owner:** `yadavchinmay45-cloud`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
+
 ### Dependencies
 T2-001, T1-008
 
@@ -320,6 +344,10 @@ Ask AI to explain HTML parsing for search results.
 **Team:** Team 2 — Connectors + Collection
 **Objective:** Implement DNS and RDAP lookup connector.
 **Why:** DNS and domain registration data are essential for infrastructure OSINT.
+
+**Primary Owner:** `AaryanDhotre2326`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
 
 ### Dependencies
 T2-001, T1-008
@@ -373,6 +401,10 @@ Ask AI to explain Node.js DNS module and RDAP protocol.
 **Objective:** Implement Certificate Transparency log connector.
 **Why:** CT logs reveal domain ownership and infrastructure relationships.
 
+**Primary Owner:** `AaryanDhotre2326`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
+
 ### Dependencies
 T2-001, T1-008
 
@@ -424,6 +456,10 @@ Ask AI to explain Certificate Transparency and crt.sh API.
 **Objective:** Implement GitHub public API connector for repository intelligence.
 **Why:** GitHub reveals developer activity, technologies, and project relationships.
 
+**Primary Owner:** `antarahire22-creator`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
+
 ### Dependencies
 T2-001, T1-008
 
@@ -474,6 +510,10 @@ Ask AI to explain GitHub REST API v3 public endpoints.
 **Team:** Team 2 — Connectors + Collection
 **Objective:** Implement the data normalization pipeline that converts raw connector output to Observation schema.
 **Why:** All connectors produce different formats. Normalization ensures uniform output.
+
+**Primary Owner:** `antarahire22-creator`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
 
 ### Dependencies
 T2-001, T1-008
@@ -527,6 +567,10 @@ Ask AI to explain data normalization patterns.
 **Objective:** Implement per-connector rate limiting.
 **Why:** Rate limiting prevents source blocking and respects fair use.
 
+**Primary Owner:** `darshankamble0628-coder`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
+
 ### Dependencies
 T2-001
 
@@ -576,6 +620,10 @@ Ask AI to explain rate limiting algorithms.
 **Team:** Team 2 — Connectors + Collection
 **Objective:** Implement timeout and retry logic with exponential backoff.
 **Why:** Network requests can be slow or fail. Retry logic improves reliability.
+
+**Primary Owner:** `darshankamble0628-coder`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
 
 ### Dependencies
 T2-001
@@ -629,6 +677,10 @@ Ask AI to explain exponential backoff and circuit breaker patterns.
 **Objective:** Implement connector health monitoring and reporting.
 **Why:** The system needs to know which connectors are operational.
 
+**Primary Owner:** `riddhisawant305-jpg`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** Team lead
+
 ### Dependencies
 T2-003
 
@@ -680,6 +732,10 @@ Ask AI to explain health check patterns.
 **Objective:** Implement connector activity logging.
 **Why:** Collection activity must be traceable for audit and debugging.
 
+**Primary Owner:** `riddhisawant305-jpg`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** Team lead
+
 ### Dependencies
 T2-001
 
@@ -729,6 +785,10 @@ Ask AI to explain structured logging patterns.
 **Team:** Team 2 — Connectors + Collection
 **Objective:** Implement security validation for all connector inputs and outputs.
 **Why:** Connectors handle external data. Security validation prevents injection and abuse.
+
+**Primary Owner:** `riddhisawant305-jpg`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `darshankamble0628-coder`
 
 ### Dependencies
 T2-001
@@ -782,6 +842,10 @@ Ask AI to explain SSRF attack vectors and defenses.
 **Objective:** Write comprehensive unit tests for all connectors and framework components.
 **Why:** Tests ensure reliability and prevent regressions.
 
+**Primary Owner:** `darshankamble0628-coder`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `riddhisawant305-jpg`
+
 ### Dependencies
 T2-005 through T2-015
 
@@ -832,6 +896,10 @@ Ask AI to explain HTTP mocking patterns.
 **Objective:** Write integration tests against live public sources.
 **Why:** Integration tests verify real-world connector behavior.
 
+**Primary Owner:** `yadavchinmay45-cloud`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** `AaryanDhotre2326`
+
 ### Dependencies
 T2-016
 
@@ -881,6 +949,10 @@ Ask AI to explain integration testing with external services.
 **Team:** Team 2 — Connectors + Collection
 **Objective:** Write documentation for all connectors and the connector framework.
 **Why:** Clear documentation helps developers create new connectors and understand existing ones.
+
+**Primary Owner:** `riddhisawant305-jpg`
+**Reviewer:** Head Intern (`riddhisawant305-jpg`)
+**Backup:** Team lead
 
 ### Dependencies
 T2-017

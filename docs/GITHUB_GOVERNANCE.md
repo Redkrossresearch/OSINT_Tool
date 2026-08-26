@@ -53,15 +53,17 @@
 
 ## GitHub Teams (7)
 
-| Team | Slug | ID | Privacy | Permission | Purpose | Members |
-|---|---|---|---|---|---|---|
-| technical-admins | `technical-admins` | 19165676 | closed | push | Technical architecture & governance | ojas1216 |
-| directors | `directors` | 19165984 | closed | pull | Director oversight | harsh01harsh |
-| team-core | `team-core` | 19165667 | closed | push | Core Platform + Evidence | (pending) |
-| team-connectors | `team-connectors` | 19165668 | closed | push | Connectors + Collection | (pending) |
-| team-intelligence | `team-intelligence` | 19165669 | closed | push | Intelligence + Entity + Graph | (pending) |
-| team-ai-verification | `team-ai-verification` | 19165670 | closed | push | AI + Verification | (pending) |
-| team-product | `team-product` | 19165671 | closed | push | Frontend + Reporting + QA | (pending) |
+| Team | Slug | ID | Privacy | Permission | Members |
+|---|---|---|---|---|---|
+| technical-admins | `technical-admins` | 19165676 | closed | push | ojas1216 |
+| directors | `directors` | 19165984 | closed | pull | harsh01harsh |
+| team-core | `team-core` | 19165667 | closed | push | ojas1216, Preetam-06, Dinesh-Kumar-Ved, Zrahul2024, jadhavsarthak374-ai, ANDY15K |
+| team-connectors | `team-connectors` | 19165668 | closed | push | ojas1216, riddhisawant305-jpg, yadavchinmay45-cloud, AaryanDhotre2326, antarahire22-creator, darshankamble0628-coder |
+| team-intelligence | `team-intelligence` | 19165669 | closed | push | ojas1216, hirveabhishek2006-design, katkarsujal1-design, raunaksin9890-gif, Pannkajyadhav333, parthvichare20 |
+| team-ai-verification | `team-ai-verification` | 19165670 | closed | push | ojas1216, sumeetmore334-rgb, anujmore2006-collab, Akash-Upade, shraddhamahindrakar217-cloud |
+| team-product | `team-product` | 19165671 | closed | push | ojas1216, Ishauparkar13, aryanbhosale20, dakshjadyar, Deepkasare, krishnasondigala-sys |
+
+**Note:** Team members show as "pending" until they accept GitHub invitations.
 
 ---
 
@@ -72,38 +74,28 @@
 | shivammittal2403 | CEO | admin | — | Full admin |
 | ojas1216 | Tech Architect | admin | technical-admins | Full admin |
 | harsh01harsh | Director | admin* | directors | *Needs reduction to read via web UI |
-| Upasana1611 | Pending | read | — | Awaiting roster |
-| Preetam-06 | Pending | write | — | Awaiting roster |
-| PiyushBabele1 | Pending | read | — | Awaiting roster |
-| riddhisawant305-jpg | Pending | write | — | Awaiting roster |
-| ishauparkar13 | Pending | write | — | Awaiting roster |
-| hirveabhishek2006-design | Pending | write | — | Awaiting roster |
-| sumeetmore334-rgb | Pending | write | — | Awaiting roster |
-
-**\*ACTION REQUIRED:** Harsh's repo permission must be changed from admin to read via GitHub web UI by another org owner.
+| Upasana1611 | Pending | read | — | FLAG FOR HUMAN REVIEW |
+| Preetam-06 | Head Intern | write | team-core | Team 1 head |
+| PiyushBabele1 | Pending | read | — | FLAG FOR HUMAN REVIEW |
+| riddhisawant305-jpg | Head Intern | write | team-connectors | Team 2 head |
+| ishauparkar13 | Head Intern | write | team-product | Team 5 head |
+| hirveabhishek2006-design | Head Intern | write | team-intelligence | Team 3 head |
+| sumeetmore334-rgb | Head Intern | write | team-ai-verification | Team 4 head |
 
 ---
 
-## Organization Members
+## CODEOWNERS
 
-| Username | Role | Notes |
-|---|---|---|
-| harsh01harsh | Member* | *Org owner status unknown (requires admin:org scope) |
-| ojas1216 | Member | CLI authenticated user |
-| PiyushBabele1 | Member | — |
-| shivammittal2403 | Member* | *Org owner status unknown |
-| Upasana1611 | Member | — |
+**ACTIVE.** See `.github/CODEOWNERS`.
 
----
-
-## CODEOWNERS Status
-
-**NOT ACTIVE.** See `docs/CODEOWNERS_PLAN.md` for intended mapping.
-
-Activation requires:
-1. Team members assigned (Excel roster)
-2. Repository team access configured
-3. Team leads confirmed
+| Directory | Owner |
+|---|---|
+| `services/core/`, `services/evidence/`, `packages/schemas/` | @Redkrossresearch/team-core |
+| `connectors/`, `services/connectors/` | @Redkrossresearch/team-connectors |
+| `services/intelligence/`, `services/graph/`, `packages/entities/` | @Redkrossresearch/team-intelligence |
+| `services/ai/`, `services/verification/` | @Redkrossresearch/team-ai-verification |
+| `apps/web/`, `services/reporting/` | @Redkrossresearch/team-product |
+| Architecture/governance files | @Redkrossresearch/technical-admins |
 
 ---
 
@@ -111,23 +103,7 @@ Activation requires:
 
 **NOT CONFIGURED.** GitHub Free plan does not support branch protection for private repos.
 
-Required action:
-- Upgrade to GitHub Pro, OR
-- Enforce via convention and team discipline
-
----
-
-## Team Branches
-
-**NOT CREATED.** Will be created after team membership is finalized.
-
-| Branch | Purpose |
-|---|---|
-| `team/1-core` | Team 1 integration |
-| `team/2-connectors` | Team 2 integration |
-| `team/3-intelligence` | Team 3 integration |
-| `team/4-ai-verification` | Team 4 integration |
-| `team/5-product` | Team 5 integration |
+Enforced via: documentation, PR workflow, CODEOWNERS, CI, team discipline.
 
 ---
 
@@ -135,31 +111,17 @@ Required action:
 
 | Item | Status | Blocked By |
 |---|---|---|
-| Excel roster | Pending | CEO delivery |
-| Team member assignments | Pending | Excel roster |
-| Harsh repo permission reduction | Pending | Web UI by org owner |
-| CODEOWNERS activation | Pending | Team membership |
-| Branch protection | Pending | GitHub Pro or convention |
-| Team branches | Pending | Team membership |
-| Task assignments | Pending | Team leads confirmed |
-
----
-
-## CLI Authentication
-
-Authenticated as: `ojas1216`
-Token scopes: `gist`, `read:org`, `repo`, `workflow`
-Missing: `admin:org` (required for team-repo access management)
-
-To enable full governance operations:
-```
-gh auth refresh -h github.com -s admin:org
-```
+| Harsh permission reduction | Pending | Web UI by org owner |
+| Upasana1611 review | Pending | Human decision |
+| PiyushBabele1 review | Pending | Human decision |
+| lahanesakahi-create verification | Pending | Correct GitHub username |
+| khushishukla3008 verification | Pending | Correct GitHub username |
+| Team invitation acceptance | Pending | Interns accepting invitations |
 
 ---
 
 ## Related Documents
 
 - `docs/ACCESS_CONTROL.md` — Authoritative access structure
-- `docs/TEAM_MEMBERS_PENDING.md` — Pending team membership
-- `docs/CODEOWNERS_PLAN.md` — CODEOWNERS activation plan
+- `docs/TEAM_ROSTER.md` — Full roster with task assignments
+- `docs/TEAM_MEMBERS_PENDING.md` — Team membership details

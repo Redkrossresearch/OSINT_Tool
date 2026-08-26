@@ -246,3 +246,18 @@ See `docs/tasks/team-3-intelligence.md` for the complete task list.
 - [ ] Documentation updated
 - [ ] PR reviewed and approved
 - [ ] No silent entity merges
+
+---
+
+## Current Team Members
+
+Head Intern: Abhishek Hirve (`hirveabhishek2006-design`)
+
+| Member | Role | Task Allocations |
+|---|---|---|
+| hirveabhishek2006-design | Head Intern | T3-001, T3-002 |
+| katkarsujal1-design | Intern | T3-003, T3-004 |
+| raunaksin9890-gif | Intern | T3-005, T3-006 |
+| Pannkajyadhav333 | Intern | T3-007, T3-008, T3-012 |
+| parthvichare20 | Intern | T3-009, T3-010, T3-011, T3-013, T3-014 |
+| lahanesakahi-create | PENDING VERIFICATION | |

@@ -1,0 +1,30 @@
+# Default code owners for the repository
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Core Platform + Evidence
+/services/core/ @Redkrossresearch/team-core
+/services/evidence/ @Redkrossresearch/team-core
+/packages/schemas/ @Redkrossresearch/team-core
+
+# Connectors + Collection
+/connectors/ @Redkrossresearch/team-connectors
+/services/connectors/ @Redkrossresearch/team-connectors
+
+# Intelligence + Entity + Graph
+/services/intelligence/ @Redkrossresearch/team-intelligence
+/services/graph/ @Redkrossresearch/team-intelligence
+/packages/entities/ @Redkrossresearch/team-intelligence
+
+# AI + Verification
+/services/ai/ @Redkrossresearch/team-ai-verification
+/services/verification/ @Redkrossresearch/team-ai-verification
+
+# Product + Frontend + Reporting
+/apps/web/ @Redkrossresearch/team-product
+/services/reporting/ @Redkrossresearch/team-product
+
+# Architecture and Governance
+/ARCHITECTURE.md @Redkrossresearch/technical-admins
+/SECURITY.md @Redkrossresearch/technical-admins
+/.github/ @Redkrossresearch/technical-admins
+/docs/architecture/ @Redkrossresearch/technical-admins

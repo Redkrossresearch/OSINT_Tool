@@ -271,3 +271,16 @@ See `docs/tasks/team-4-ai.md` for the complete task list.
 - [ ] Documentation updated
 - [ ] PR reviewed and approved
 - [ ] Evidence is source of truth verified
+
+---
+
+## Current Team Members
+
+Head Intern: Sumeet Nandu More (`sumeetmore334-rgb`)
+
+| Member | Role | Task Allocations |
+|---|---|---|
+| sumeetmore334-rgb | Head Intern | T4-001, T4-002, T4-016 |
+| anujmore2006-collab | Intern | T4-003, T4-004, T4-005, T4-017 |
+| Akash-Upade | Intern | T4-006, T4-007, T4-008, T4-009 |
+| shraddhamahindrakar217-cloud | Intern | T4-010, T4-011, T4-012, T4-013, T4-014, T4-015 |

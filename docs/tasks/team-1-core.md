@@ -6,6 +6,10 @@
 **Objective:** Initialize the pnpm monorepo with TypeScript, ESLint, Prettier, and workspace configuration.
 **Why:** Every team needs a consistent project structure to work in parallel.
 
+**Primary Owner:** `Preetam-06`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** Team lead
+
 ### Dependencies
 None
 
@@ -70,6 +74,10 @@ Ask AI to explain pnpm workspace configuration before implementing. Ask for a se
 **Objective:** Configure each workspace package with proper package.json, tsconfig, and build settings.
 **Why:** Each team needs their package ready to accept code.
 
+**Primary Owner:** `Preetam-06`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** Team lead
+
 ### Dependencies
 T1-001
 
@@ -125,6 +133,10 @@ Ask AI to explain TypeScript project references in monorepos before implementing
 **Objective:** Set up the shared schema package with Zod validation and barrel exports.
 **Why:** All teams consume shared schemas. This package is the contract between teams.
 
+**Primary Owner:** `Dinesh-Kumar-Ved`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Preetam-06`
+
 ### Dependencies
 T1-002
 
@@ -178,6 +190,10 @@ Ask AI to explain Zod schema composition before implementing.
 **Team:** Team 1 — Core + Evidence
 **Objective:** Define the Case TypeScript types and Zod validation schemas.
 **Why:** Case is the top-level container for investigations.
+
+**Primary Owner:** `Dinesh-Kumar-Ved`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Preetam-06`
 
 ### Dependencies
 T1-003
@@ -233,6 +249,10 @@ Ask AI to explain Zod enum and object schema patterns.
 **Objective:** Define the Investigation TypeScript types and state machine types.
 **Why:** Investigation is the core work unit with lifecycle states.
 
+**Primary Owner:** `ANDY15K`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Preetam-06`
+
 ### Dependencies
 T1-003, T1-004
 
@@ -287,6 +307,10 @@ Ask AI to explain state machine patterns in TypeScript.
 **Objective:** Define the Objective TypeScript types and validation schemas.
 **Why:** Objectives define what an investigation is trying to discover.
 
+**Primary Owner:** `Dinesh-Kumar-Ved`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Preetam-06`
+
 ### Dependencies
 T1-003
 
@@ -340,6 +364,10 @@ Ask AI to explain Zod discriminated unions.
 **Objective:** Define the Source reference schema for tracking data origins.
 **Why:** Every observation must trace back to its source.
 
+**Primary Owner:** `Zrahul2024`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Preetam-06`
+
 ### Dependencies
 T1-003
 
@@ -390,6 +418,10 @@ Ask AI to explain source provenance patterns.
 **Team:** Team 1 — Core + Evidence
 **Objective:** Define the Observation schema that connectors produce and intelligence consumes.
 **Why:** Observation is the central data contract between Team 2 and Teams 3/4.
+
+**Primary Owner:** `Zrahul2024`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Preetam-06`
 
 ### Dependencies
 T1-003, T1-007
@@ -442,6 +474,10 @@ Ask AI to explain contract-first API design.
 **Team:** Team 1 — Core + Evidence
 **Objective:** Define the Evidence schema and hashing types.
 **Why:** Evidence is the immutable record of collected information.
+
+**Primary Owner:** `jadhavsarthak374-ai`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Preetam-06`
 
 ### Dependencies
 T1-003, T1-007
@@ -496,6 +532,10 @@ Ask AI to explain evidence integrity patterns.
 **Objective:** Define the Provenance chain types for evidence lifecycle tracking.
 **Why:** Every evidence action must be traceable for audit and legal purposes.
 
+**Primary Owner:** `Zrahul2024`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Preetam-06`
+
 ### Dependencies
 T1-003
 
@@ -546,6 +586,10 @@ Ask AI to explain audit trail patterns.
 **Team:** Team 1 — Core + Evidence
 **Objective:** Implement SHA-256 hashing for evidence integrity verification.
 **Why:** Evidence must be tamper-evident. Hashing detects any modification.
+
+**Primary Owner:** `jadhavsarthak374-ai`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Dinesh-Kumar-Ved`
 
 ### Dependencies
 T1-009
@@ -602,6 +646,10 @@ Ask AI to explain Node.js crypto module and canonical JSON serialization.
 **Objective:** Define metadata structure for evidence items.
 **Why:** Evidence needs context (source-specific data, collection parameters, etc.).
 
+**Primary Owner:** `Dinesh-Kumar-Ved`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `jadhavsarthak374-ai`
+
 ### Dependencies
 T1-009
 
@@ -653,6 +701,10 @@ Ask AI to explain discriminated metadata patterns.
 **Objective:** Define audit event types for investigation action logging.
 **Why:** All investigation actions must be logged for accountability and replay.
 
+**Primary Owner:** `ANDY15K`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Preetam-06`
+
 ### Dependencies
 T1-003, T1-005
 
@@ -703,6 +755,10 @@ Ask AI to explain event sourcing patterns.
 **Team:** Team 1 — Core + Evidence
 **Objective:** Implement the investigation state machine with valid transitions.
 **Why:** Investigations must follow a controlled lifecycle.
+
+**Primary Owner:** `ANDY15K`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Preetam-06`
 
 ### Dependencies
 T1-005
@@ -756,6 +812,10 @@ Ask AI to explain finite state machine implementation in TypeScript.
 **Team:** Team 1 — Core + Evidence
 **Objective:** Set up PostgreSQL with Prisma ORM and create initial database schema.
 **Why:** All services need a database foundation.
+
+**Primary Owner:** `jadhavsarthak374-ai`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `ANDY15K`
 
 ### Dependencies
 T1-001, T1-004, T1-005, T1-008, T1-009, T1-013
@@ -813,6 +873,10 @@ Ask AI to explain Prisma schema design and migration strategy.
 **Objective:** Implement the service layer structure for Case, Investigation, and Objective.
 **Why:** Services provide the business logic layer between API and database.
 
+**Primary Owner:** `Preetam-06`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** Team lead
+
 ### Dependencies
 T1-015
 
@@ -867,6 +931,10 @@ Ask AI to explain service layer patterns and dependency injection.
 **Team:** Team 1 — Core + Evidence
 **Objective:** Implement REST API endpoints for Case, Investigation, and Objective.
 **Why:** APIs are how other teams and the frontend consume core services.
+
+**Primary Owner:** `Preetam-06`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** Team lead
 
 ### Dependencies
 T1-016
@@ -925,6 +993,10 @@ Ask AI to explain REST API design best practices.
 **Objective:** Implement REST API endpoints for Evidence CRUD and provenance tracking.
 **Why:** Evidence API is how connectors store data and other teams query evidence.
 
+**Primary Owner:** `jadhavsarthak374-ai`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `Dinesh-Kumar-Ved`
+
 ### Dependencies
 T1-016, T1-011
 
@@ -977,6 +1049,10 @@ Ask AI to explain immutable data patterns.
 **Team:** Team 1 — Core + Evidence
 **Objective:** Implement consistent validation and error handling across all services and APIs.
 **Why:** Consistent error handling prevents bugs and improves developer experience.
+
+**Primary Owner:** `Preetam-06`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** Team lead
 
 ### Dependencies
 T1-017, T1-018
@@ -1032,6 +1108,10 @@ Ask AI to explain Express error handling middleware patterns.
 **Objective:** Write comprehensive unit tests for all core services and schemas.
 **Why:** Tests ensure reliability and prevent regressions.
 
+**Primary Owner:** `jadhavsarthak374-ai`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `ANDY15K`
+
 ### Dependencies
 T1-016, T1-017, T1-018, T1-019
 
@@ -1084,6 +1164,10 @@ Ask AI to explain testing patterns for the framework used.
 **Objective:** Write integration tests for API endpoints with database.
 **Why:** Integration tests verify end-to-end functionality.
 
+**Primary Owner:** `ANDY15K`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** `jadhavsarthak374-ai`
+
 ### Dependencies
 T1-020
 
@@ -1134,6 +1218,10 @@ Ask AI to explain integration testing with Prisma and test databases.
 **Team:** Team 1 — Core + Evidence
 **Objective:** Write comprehensive documentation for all core services and schemas.
 **Why:** Other teams need clear documentation to consume Team 1's APIs.
+
+**Primary Owner:** `Preetam-06`
+**Reviewer:** Head Intern (`Preetam-06`)
+**Backup:** Team lead
 
 ### Dependencies
 T1-021

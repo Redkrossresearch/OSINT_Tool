@@ -210,3 +210,17 @@ See `docs/tasks/team-1-core.md` for the complete task list.
 - [ ] Schemas backward-compatible
 - [ ] API endpoints documented
 - [ ] Migrations are reversible
+
+---
+
+## Current Team Members
+
+Head Intern: Preetam OmNarayan Prajapati (`Preetam-06`)
+
+| Member | Role | Task Allocations |
+|---|---|---|
+| Preetam-06 | Head Intern | T1-001, T1-002 |
+| Dinesh-Kumar-Ved | Intern | T1-003, T1-004, T1-006 |
+| Zrahul2024 | Intern | T1-007, T1-008, T1-010 |
+| jadhavsarthak374-ai | Intern | T1-009, T1-011, T1-015 |
+| ANDY15K | Intern | T1-005, T1-013, T1-014 |

@@ -250,3 +250,18 @@ See `docs/tasks/team-5-product.md` for the complete task list.
 - [ ] Documentation updated
 - [ ] PR reviewed and approved
 - [ ] No secrets in client bundle
+
+---
+
+## Current Team Members
+
+Head Intern: Isha Uparkar (`Ishauparkar13`)
+
+| Member | Role | Task Allocations |
+|---|---|---|
+| Ishauparkar13 | Head Intern | T5-001, T5-002 |
+| aryanbhosale20 | Intern | T5-003, T5-004, T5-005 |
+| dakshjadyar | Intern | T5-006, T5-007, T5-015 |
+| Deepkasare | Intern | T5-008, T5-009, T5-010 |
+| krishnasondigala-sys | Intern | T5-011, T5-012, T5-013, T5-014 |
+| khushishukla3008 | PENDING VERIFICATION | |

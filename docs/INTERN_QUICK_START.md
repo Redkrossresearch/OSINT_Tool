@@ -6,6 +6,30 @@ This guide will help you get started as a developer on this project. Read it com
 
 ---
 
+## After Receiving GitHub Access
+
+1. Accept the GitHub team invitation
+2. Clone the repository
+3. Open the project folder
+4. Start OpenCode
+5. Read `docs/OPENCODE_MASTER_INSTRUCTIONS.md`
+6. Open your personal assignment: `docs/assignments/<your-github-username>.md`
+7. Identify your assigned task
+8. Read the task document in `docs/tasks/team-[N]-*.md`
+9. Check dependencies
+10. Create your feature branch
+11. Ask OpenCode to explain the task
+12. Implement
+13. Test
+14. Commit
+15. Push
+16. Create PR
+17. Request your head intern's review
+
+**Your personal assignment file is the single source of truth for your work.**
+
+---
+
 ## What Is This Project?
 
 We are building an **OSINT (Open Source Intelligence) Investigation Platform**. This is a tool that helps investigators collect, analyze, and verify publicly available information for authorized investigations.
