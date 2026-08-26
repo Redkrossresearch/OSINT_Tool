@@ -805,7 +805,7 @@ Ask AI to explain file export patterns.
 **Objective:** Implement consistent error and loading states across all pages.
 **Why:** Good UX requires clear feedback during loading and errors.
 
-**Primary Owner:** `dakshjadyar`
+**Primary Owner:** `khushishukla3008-star`
 **Reviewer:** Head Intern (`Ishauparkar13`)
 **Backup:** `Ishauparkar13`
 
@@ -860,7 +860,7 @@ Ask AI to explain React error boundary patterns.
 **Objective:** Ensure WCAG 2.1 AA accessibility compliance.
 **Why:** Accessibility ensures the product is usable by everyone.
 
-**Primary Owner:** `dakshjadyar`
+**Primary Owner:** `khushishukla3008-star`
 **Reviewer:** Head Intern (`Ishauparkar13`)
 **Backup:** `Deepkasare`
 

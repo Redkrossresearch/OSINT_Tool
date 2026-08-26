@@ -98,12 +98,10 @@
 | T3-012 | Temporal Relationships | Pannkajyadhav333 | `NOT STARTED` | T3-008 | Time-aware relationships | — | parthvichare20 | None |
 | T3-013 | Investigation Timeline | parthvichare20 | `NOT STARTED` | T3-009, T1-013 | Timeline data/service | — | hirveabhishek2006-design | T5-010 |
 | T3-014 | Entity API | parthvichare20 | `NOT STARTED` | T3-009 | Entity CRUD API endpoints | — | hirveabhishek2006-design | T5-008, T5-013 |
-| T3-015 | Resolution Tests | katkarsujal1-design | `NOT STARTED` | T3-005 | Entity resolution test suite | — | raunaksin9890-gif | T3-017 |
-| T3-016 | Graph Tests | Pannkajyadhav333 | `NOT STARTED` | T3-010, T3-011 | Graph module test suite | — | parthvichare20 | T3-017 |
+| T3-015 | Resolution Tests | lahanesakshi-create | `NOT STARTED` | T3-005 | Edge cases covered | T3-005 blocked | T3-017 | hirveabhishek2006-design |
+| T3-016 | Graph Tests | lahanesakshi-create | `NOT STARTED` | T3-010, T3-011 | Tests pass | T3-010, T3-011 blocked | T3-017 | hirveabhishek2006-design |
 | T3-017 | Integration Tests | Pannkajyadhav333 | `NOT STARTED` | T3-003 through T3-014 | Team 3 integration tests | — | hirveabhishek2006-design | T3-018 |
 | T3-018 | Documentation | hirveabhishek2006-design | `NOT STARTED` | T3-017 | Entity/Graph documentation | — | Team lead | None |
-
-**UNASSIGNED: lahanesakahi-create** — Account not found on GitHub
 
 ---
 
@@ -152,13 +150,11 @@
 | T5-012 | Verification View | krishnasondigala-sys | `NOT STARTED` | T5-011, T4-013 | Verification workflow view | — | Ishauparkar13 | None |
 | T5-013 | Report Generation | krishnasondigala-sys | `NOT STARTED` | T5-002, T1-018, T3-014, T4-011 | Report generation UI | — | Ishauparkar13 | T5-014 |
 | T5-014 | Report Export | krishnasondigala-sys | `NOT STARTED` | T5-013 | Report export functionality | — | Ishauparkar13 | None |
-| T5-015 | Error/Loading States | dakshjadyar | `NOT STARTED` | T5-002 | Error boundaries, loading spinners | — | Ishauparkar13 | T5-017 |
-| T5-016 | Accessibility | dakshjadyar | `NOT STARTED` | T5-002 | WCAG compliance, a11y features | — | Deepkasare | T5-017 |
+| T5-015 | Error/Loading States | khushishukla3008-star | `NOT STARTED` | T5-002 | Error boundary works | T5-002 blocked | T5-017 | Ishauparkar13 |
+| T5-016 | Accessibility | khushishukla3008-star | `NOT STARTED` | T5-002 | Keyboard nav works | T5-002 blocked | T5-017 | Ishauparkar13 |
 | T5-017 | E2E Tests | Deepkasare | `NOT STARTED` | T5-002 through T5-016 | End-to-end test suite | — | krishnasondigala-sys | T5-018 |
 | T5-018 | Product Integration Tests | krishnasondigala-sys | `NOT STARTED` | T5-017 | Full product integration tests | — | Deepkasare | T5-019 |
 | T5-019 | Documentation | Ishauparkar13 | `NOT STARTED` | T5-018 | Frontend documentation | — | Team lead | None |
-
-**UNASSIGNED: khushishukla3008** — Account not found on GitHub
 
 ---
 
@@ -234,6 +230,9 @@ If your primary task is blocked, check below for available backup tasks.
 ### parthvichare20
 - **Backup for:** T3-016 (Graph Tests)
 
+### lahanesakshi-create
+- **Backup for:** T3-018 (Documentation), T3-002 (Normalization)
+
 ### sumeetmore334-rgb
 - **Backup for:** T4-016 (AI Safety Controls), T4-020 (Documentation)
 
@@ -257,6 +256,9 @@ If your primary task is blocked, check below for available backup tasks.
 
 ### Deepkasare
 - **Backup for:** T5-016 (Accessibility), T5-017 (E2E Tests)
+
+### khushishukla3008-star
+- **Backup for:** T5-019 (Documentation), Component Design
 
 ### krishnasondigala-sys
 - **Backup for:** T5-018 (Product Integration Tests)

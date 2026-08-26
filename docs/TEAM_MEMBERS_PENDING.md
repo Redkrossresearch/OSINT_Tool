@@ -1,6 +1,6 @@
 # Team Members — July Batch Roster
 
-**Status:** 24 of 26 verified. 2 pending human action.
+**Status:** 26 of 26 verified. 0 pending.
 **Last Updated:** 25 August 2026
 **Source:** July_Batch_Github_Username.xlsx
 
@@ -48,7 +48,7 @@
 
 ---
 
-## Team 3 — Intelligence + Entity + Graph (5 verified, 1 pending)
+## Team 3 — Intelligence + Entity + Graph (6 verified)
 
 **GitHub Team:** `team-intelligence`
 **Head Intern:** hirveabhishek2006-design
@@ -60,7 +60,7 @@
 | Raunak Singh | `raunaksin9890-gif` | Intern | T3-005, T3-006 | ✅ |
 | Pankaj Yadav | `Pannkajyadhav333` | Intern | T3-007, T3-008, T3-012 | ✅ |
 | Parth Vichare | `parthvichare20` | Intern | T3-009, T3-010, T3-011, T3-013, T3-014 | ✅ |
-| Sakshi Lahane | `lahanesakahi-create` | Intern | — | ❌ **VERIFICATION FAILED** |
+| Sakshi Lahane | `lahanesakshi-create` | Intern | T3-015, T3-016 | ✅ Invited |
 
 ---
 
@@ -78,7 +78,7 @@
 
 ---
 
-## Team 5 — Product + Frontend + Reporting (5 verified, 1 pending)
+## Team 5 — Product + Frontend + Reporting (6 verified)
 
 **GitHub Team:** `team-product`
 **Head Intern:** Ishauparkar13
@@ -90,7 +90,7 @@
 | Daksh Sanjay Jadyar | `dakshjadyar` | Intern | T5-006, T5-007, T5-015 | ✅ |
 | Deep Kasare | `Deepkasare` | Intern | T5-008, T5-009, T5-010 | ✅ |
 | Krishna Sondigala | `krishnasondigala-sys` | Intern | T5-011, T5-012, T5-013, T5-014 | ✅ |
-| Khushi Shukla | `khushishukla3008` | Intern | — | ❌ **VERIFICATION FAILED** |
+| Khushi Shukla | `khushishukla3008-star` | Intern | T5-015, T5-016 | ✅ Invited |
 
 ---
 
@@ -100,21 +100,21 @@
 |---|---|---|---|
 | Team 1 | 5 | 0 | 5 |
 | Team 2 | 5 | 0 | 5 |
-| Team 3 | 5 | 1 | 6 |
+| Team 3 | 6 | 0 | 6 |
 | Team 4 | 4 | 0 | 4 |
-| Team 5 | 5 | 1 | 6 |
-| **Total** | **24** | **2** | **26** |
+| Team 5 | 6 | 0 | 6 |
+| **Total** | **26** | **0** | **26** |
 
 ---
 
-## Failed Verifications
+## Resolved Verifications
 
-| Name | GitHub Username | Team | Issue |
-|---|---|---|---|
-| Sakshi Lahane | `lahanesakahi-create` | Team 3 | Account not found on GitHub |
-| Khushi Shukla | `khushishukla3008` | Team 5 | Account not found on GitHub |
+| Name | GitHub Username | Team | Issue | Resolution |
+|---|---|---|---|---|
+| Sakshi Lahane | `lahanesakshi-create` | Team 3 | Account not found on GitHub | Corrected username, invitation sent |
+| Khushi Shukla | `khushishukla3008-star` | Team 5 | Account not found on GitHub | Corrected username, invitation sent |
 
-**Action required:** Verify correct GitHub usernames for these two individuals.
+**Status:** Both usernames corrected and invitations sent. Pending acceptance.
 
 ---
 

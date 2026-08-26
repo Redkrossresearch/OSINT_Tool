@@ -260,4 +260,4 @@ Head Intern: Abhishek Hirve (`hirveabhishek2006-design`)
 | raunaksin9890-gif | Intern | T3-005, T3-006 |
 | Pannkajyadhav333 | Intern | T3-007, T3-008, T3-012 |
 | parthvichare20 | Intern | T3-009, T3-010, T3-011, T3-013, T3-014 |
-| lahanesakahi-create | PENDING VERIFICATION | |
+| Sakshi Lahane | `lahanesakshi-create` | Intern | T3-015, T3-016 | ✅ Invited |

@@ -796,7 +796,7 @@ Ask AI to explain search API patterns.
 **Objective:** Write comprehensive tests for entity resolution edge cases.
 **Why:** Entity resolution is complex. Thorough testing prevents silent merges and data corruption.
 
-**Primary Owner:** `katkarsujal1-design`
+**Primary Owner:** `lahanesakshi-create`
 **Reviewer:** Head Intern (`hirveabhishek2006-design`)
 **Backup:** `raunaksin9890-gif`
 
@@ -849,7 +849,7 @@ Ask AI to explain entity resolution test patterns.
 **Objective:** Write comprehensive tests for graph queries and storage.
 **Why:** Graph operations are complex. Tests ensure correctness.
 
-**Primary Owner:** `parthvichare20`
+**Primary Owner:** `lahanesakshi-create`
 **Reviewer:** Head Intern (`hirveabhishek2006-design`)
 **Backup:** `Pannkajyadhav333`
 

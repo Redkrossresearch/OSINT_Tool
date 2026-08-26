@@ -114,9 +114,8 @@ Enforced via: documentation, PR workflow, CODEOWNERS, CI, team discipline.
 | Harsh permission reduction | Pending | Web UI by org owner |
 | Upasana1611 review | Pending | Human decision |
 | PiyushBabele1 review | Pending | Human decision |
-| lahanesakahi-create verification | Pending | Correct GitHub username |
-| khushishukla3008 verification | Pending | Correct GitHub username |
-| Team invitation acceptance | Pending | Interns accepting invitations |
+| lahanesakshi-create invitation | Pending | Intern accepting invitation |
+| khushishukla3008-star invitation | Pending | Intern accepting invitation |
 
 ---
 

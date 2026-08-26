@@ -28,7 +28,7 @@
 | 16 | Raunak Singh | raunaksin9890-gif | Team 3 | team-intelligence | ✅ | write | ✅ | Intern | 2 | 4 | ACTIVE |
 | 17 | Pankaj Yadav | Pannkajyadhav333 | Team 3 | team-intelligence | ✅ | write | ✅ | Intern | 4 | 11 | ACTIVE |
 | 18 | Parth Vichare | parthvichare20 | Team 3 | team-intelligence | ✅ | write | ✅ | Intern | 5 | 12 | ACTIVE |
-| 19 | Sakshi Lahane | lahanesakahi-create | Team 3 | — | ❌ | ❌ | ❌ | Intern | 0 | 0 | ❌ ACCOUNT NOT FOUND |
+| 19 | Sakshi Lahane | lahanesakshi-create | Team 3 | team-intelligence | ⏳ Invited | ⏳ Invited | ⏳ Pending | Intern | 1 | 2 | INVITED |
 | 20 | Sumeet More | sumeetmore334-rgb | Team 4 | team-ai-verification | ✅ | write | ✅ | Head Intern | 4 | 7 | ACTIVE |
 | 21 | Anuj More | anujmore2006-collab | Team 4 | team-ai-verification | ✅ | write | ✅ | Intern | 4 | 7 | ACTIVE |
 | 22 | Akash Upade | Akash-Upade | Team 4 | team-ai-verification | ✅ | write | ✅ | Intern | 4 | 10 | ACTIVE |
@@ -38,7 +38,7 @@
 | 26 | Daksh Jadyar | dakshjadyar | Team 5 | team-product | ✅ | write | ✅ | Intern | 4 | 6 | ACTIVE |
 | 27 | Deep Kasare | Deepkasare | Team 5 | team-product | ✅ | write | ✅ | Intern | 4 | 10 | ACTIVE |
 | 28 | Krishna Sondigala | krishnasondigala-sys | Team 5 | team-product | ✅ | write | ✅ | Intern | 4 | 8 | ACTIVE |
-| 29 | Khushi Shukla | khushishukla3008 | Team 5 | — | ❌ | ❌ | ❌ | Intern | 0 | 0 | ❌ ACCOUNT NOT FOUND |
+| 29 | Khushi Shukla | khushishukla3008-star | Team 5 | team-product | ⏳ Invited | ⏳ Invited | ⏳ Pending | Intern | 2 | 3 | INVITED |
 
 ---
 
@@ -90,21 +90,21 @@
 
 1. **Team 4 is understaffed**: 4 members for 20 tasks (8.5 effort/person). Shraddha carries 14 effort points (heaviest individual load).
 2. **Team 5 is overloaded**: 39 total effort points (highest team load). Deep and Krishna carry heavy loads.
-3. **Team 3 has 1 missing member**: lahanesakahi-create account doesn't exist. Team operates with 5 of 6.
-4. **Team 5 has 1 missing member**: khushishukla3008 account doesn't exist. Team operates with 5 of 6.
+3. **Team 3 operates with 5 active + 1 pending**: lahanesakshi-create invitation sent, awaiting acceptance.
+4. **Team 5 operates with 5 active + 1 pending**: khushishukla3008-star invitation sent, awaiting acceptance.
 5. **Head intern loads are preserved**: All head interns have 5-7 effort points, leaving capacity for coordination.
 6. **2 interns with very light loads**: AaryanDhotre2326 and antarahire22-creator (4 effort each) — available for backup/test work.
 
 ---
 
-## Failed Verifications
+## Failed Verifications (RESOLVED)
 
-| Name | GitHub Username | Team | Issue |
+| Name | GitHub Username | Team | Status |
 |---|---|---|---|
-| Sakshi Lahane | `lahanesakahi-create` | Team 3 | Account not found on GitHub (404) |
-| Khushi Shukla | `khushishukla3008` | Team 5 | Account not found on GitHub (404) |
+| Sakshi Lahane | `lahanesakshi-create` | Team 3 | ✅ Account verified, repo invitation sent, team assignment pending |
+| Khushi Shukla | `khushishukla3008-star` | Team 5 | ✅ Account verified, repo invitation sent, team assignment pending |
 
-**Action required:** These GitHub usernames do not exist. The individuals may have different usernames, or may not have GitHub accounts yet. Contact them directly to obtain correct usernames.
+**Note:** Previous usernames `lahanesakahi-create` and `khushishukla3008` were incorrect. Correct usernames are `lahanesakshi-create` and `khushishukla3008-star`.
 
 ---
 
