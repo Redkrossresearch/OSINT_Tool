@@ -10,33 +10,47 @@
 
 ## Primary Tasks
 
-| Task ID | Title | Difficulty | Dependencies | What to do |
-|---------|-------|------------|--------------|------------|
-| T3-009 | Graph Storage | Hard | T3-008 | Graph CRUD operations |
-| T3-010 | Graph Queries | Hard | T3-009 | Traversal, path finding |
-| T3-011 | Graph API | Hard | T3-010 | REST API for graph |
-| T3-013 | Investigation Timeline | Medium | T3-009, T1-013 | Timeline generation |
-| T3-014 | Entity API | Medium | T3-009 | Entity REST API |
+| Task ID | Title | Why | Dependencies | Effort | Expected Start Condition | Expected Completion Condition | Acceptance Criteria | Reviewer | Expected Handoff |
+|---------|-------|-----|--------------|--------|--------------------------|-------------------------------|---------------------|----------|------------------|
+| T3-009 | Graph Storage | Graph CRUD needed | T3-008 | 3 | Graph schema done | CRUD works | All graph CRUD operations work correctly | hirveabhishek2006-design | Unblocks T3-010, T3-013, T3-014 |
+| T3-010 | Graph Queries | Traversal needed | T3-009 | 3 | Storage done | Queries work | Graph traversal and path queries return correct results | hirveabhishek2006-design | Unblocks T3-011, T3-016, T5-009 |
+| T3-011 | Graph API | API needed for frontend | T3-010 | 2 | Queries done | Endpoints work | Graph REST API endpoints respond correctly | hirveabhishek2006-design | Unblocks T3-016, T5-009 |
+| T3-013 | Investigation Timeline | Timeline needed | T3-009, T1-013 | 2 | Storage + audit done | Timeline works | Investigation timeline generated correctly | hirveabhishek2006-design | Unblocks T5-010 |
+| T3-014 | Entity API | API needed for frontend | T3-009 | 2 | Storage done | Endpoints work | Entity REST API endpoints respond correctly | hirveabhishek2006-design | Unblocks T5-008, T5-013 |
 
-## Backup Tasks
+## What I Am Waiting For
 
-- None
+| Blocked Task | Depends On | Status |
+|-------------|------------|--------|
+| T3-009 | T3-008 (Graph Schema) | Waiting for Pannkajyadhav333 |
+| T3-010 | T3-009 (Graph Storage) | Blocked until T3-009 done |
+| T3-011 | T3-010 (Graph Queries) | Blocked until T3-010 done |
+| T3-013 | T3-009 (Graph Storage), T1-013 (Audit Event Model) | Waiting for Pannkajyadhav333, ANDY15K |
+| T3-014 | T3-009 (Graph Storage) | Blocked until T3-009 done |
 
-## Allowed Files
+## What I Can Work On While Waiting
 
-- `packages/intelligence/graph/storage/**`
-- `packages/intelligence/graph/queries/**`
-- `packages/intelligence/graph/api/**`
-- Graph CRUD, traversal, and API logic
-- Timeline generation utilities
+- T3-016 backup (graph tests)
+- Graph query design
+- PR reviews for team-intelligence
 
-## Do Not Modify
+## What Unlocks After My Tasks
 
-- Root monorepo configuration
-- Graph schema (owned by Pannkajyadhav333)
-- Entity or Relationship definitions (owned by other interns)
-- Task files or team guides
-- Other teams' workspace packages
+| My Task | Downstream Task | Team |
+|---------|----------------|------|
+| T3-011 | T5-009 (Graph View) | team-product |
+| T3-011 | T3-016 (Graph Tests) | team-intelligence |
+| T3-013 | T5-010 (Timeline) | team-product |
+| T3-014 | T5-008 (Entity Viewer) | team-product |
+| T3-014 | T5-013 (Report Generation) | team-product |
+
+## What I Must Not Modify
+
+- `packages/schemas/` — owned by team-core
+- `services/core/` — owned by team-core
+- `connectors/` — owned by team-connectors
+- `services/ai/` — owned by team-ai-verification
+- `apps/web/` — owned by team-product
 
 ## Branch Naming
 
@@ -48,7 +62,7 @@
 
 ## Who Reviews
 
-1. Team Head Intern: hirveabhishek2006-design (hirveabhishek2006-design)
+1. Team Head Intern: hirveabhishek2006-design
 2. Technical Architect: Ojas (ojas1216)
 
 ## How to Report Blockers

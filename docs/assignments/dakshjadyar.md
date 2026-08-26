@@ -10,29 +10,40 @@
 
 ## Primary Tasks
 
-| Task ID | Title | Difficulty | Dependencies | What to do |
-|---------|-------|------------|--------------|------------|
-| T5-006 | Investigation Status | Medium | T5-002, T1-017 | Investigation progress view |
-| T5-007 | Evidence Viewer | Medium | T5-002, T1-018 | Evidence list and detail |
-| T5-015 | Error/Loading States | Low | T5-002 | Error boundaries and loading |
+| Task ID | Title | Why | Dependencies | Effort | Expected Start Condition | Expected Completion Condition | Acceptance Criteria | Reviewer | Expected Handoff |
+|---------|-------|-----|--------------|--------|--------------------------|-------------------------------|---------------------|----------|------------------|
+| T5-006 | Investigation Status | Progress view | T5-002, T1-017 | 2 | Layout + API done | Details displayed | Investigation details and status shown | Ishauparkar13 | None |
+| T5-007 | Evidence Viewer | Evidence view | T5-002, T1-018 | 2 | Layout + Evidence API done | List renders | Evidence list and detail views work | Ishauparkar13 | None |
+| T5-015 | Error/Loading States | UX quality | T5-002 | 1 | Layout done | Error boundary works | Error boundaries catch failures, loading spinners show | Ishauparkar13 | T5-017 |
+| T5-016 | Accessibility | Inclusive UX | T5-002 | 1 | Layout done | Keyboard nav works | Keyboard navigation and ARIA labels work | Ishauparkar13 | T5-017 |
 
-## Backup Tasks
+## What I Am Waiting For
 
-- T5-016: Accessibility
+| Blocked Task | Depends On | Status |
+|-------------|------------|--------|
+| T5-006 | T5-002 (Application Layout), T1-017 (Core API) | Waiting for Ishauparkar13, Preetam-06 |
+| T5-007 | T5-002 (Application Layout), T1-018 (Evidence API) | Waiting for Ishauparkar13, jadhavsarthak374-ai |
 
-## Allowed Files
+## What I Can Work On While Waiting
 
-- `apps/web/components/investigations/**`
-- `apps/web/components/evidence/**`
-- `apps/web/components/ui/**` (error boundaries, loading states)
-- Investigation status and evidence viewer UI
+- T5-015 (Error/Loading States) — no backend dependency
+- T5-016 (Accessibility) — no backend dependency
+- PR reviews for team-product
 
-## Do Not Modify
+## What Unlocks After My Tasks
 
-- Root monorepo configuration
-- Application layout (owned by Ishauparkar13)
-- Task files or team guides
-- Other teams' workspace packages
+| My Task | Downstream Task | Team |
+|---------|----------------|------|
+| T5-015 | T5-017 (E2E Tests) | team-product |
+| T5-016 | T5-017 (E2E Tests) | team-product |
+
+## What I Must Not Modify
+
+- `packages/schemas/` — owned by team-core
+- `services/core/` — owned by team-core
+- `connectors/` — owned by team-connectors
+- `services/intelligence/` — owned by team-intelligence
+- `services/ai/` — owned by team-ai-verification
 
 ## Branch Naming
 
@@ -44,7 +55,7 @@
 
 ## Who Reviews
 
-1. Team Head Intern: Ishauparkar13 (Ishauparkar13)
+1. Team Head Intern: Ishauparkar13
 2. Technical Architect: Ojas (ojas1216)
 
 ## How to Report Blockers

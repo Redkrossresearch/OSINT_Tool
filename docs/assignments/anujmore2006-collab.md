@@ -10,30 +10,45 @@
 
 ## Primary Tasks
 
-| Task ID | Title | Difficulty | Dependencies | What to do |
-|---------|-------|------------|--------------|------------|
-| T4-003 | Model Configuration | Medium | T4-001 | Model config management |
-| T4-004 | Model Fallback | Medium | T4-001, T4-003 | Fallback chain (no paid APIs) |
-| T4-005 | Prompt System | Medium | T4-001 | Prompt template management |
-| T4-017 | Evaluation Dataset | Medium | T4-003, T4-005 | Evaluation fixtures |
+| Task ID | Title | Why | Dependencies | Effort | Expected Start Condition | Expected Completion Condition | Acceptance Criteria | Reviewer | Expected Handoff |
+|---------|-------|-----|--------------|--------|--------------------------|-------------------------------|---------------------|----------|------------------|
+| T4-003 | Model Configuration | Config needed | T4-001 | 1 | T4-001 done | Config works | Model configuration loaded and validated | sumeetmore334-rgb | Unblocks T4-004, T4-017 |
+| T4-004 | Model Fallback | No paid APIs | T4-001, T4-003 | 2 | Config done | Fallback works | Fallback chain activates when primary fails | sumeetmore334-rgb | None |
+| T4-005 | Prompt System | Prompts needed | T4-001 | 2 | T4-001 done | Templates work | Prompt templates loaded and render correctly | sumeetmore334-rgb | Unblocks T4-017 |
+| T4-017 | Evaluation Dataset | Evaluation needed | T4-003, T4-005 | 1 | Config + prompts done | Fixtures created | Evaluation fixtures cover all agent types | sumeetmore334-rgb | Unblocks T4-018 |
+| T4-018 | Evaluation Tests | Quality gate | T4-007, T4-008, T4-009, T4-010, T4-017 | 3 | All agents done | Evaluation passes | All agents meet quality thresholds | sumeetmore334-rgb | Unblocks T4-019 |
 
-## Backup Tasks
+## What I Am Waiting For
 
-- T4-019: Integration Tests
+| Blocked Task | Depends On | Status |
+|-------------|------------|--------|
+| T4-003 | T4-001 (Model Abstraction) | Waiting for sumeetmore334-rgb |
+| T4-004 | T4-001, T4-003 | Waiting for sumeetmore334-rgb + own T4-003 |
+| T4-005 | T4-001 (Model Abstraction) | Waiting for sumeetmore334-rgb |
+| T4-017 | T4-003, T4-005 | Blocked until T4-003 and T4-005 done |
+| T4-018 | T4-007, T4-008, T4-009, T4-010, T4-017 | Waiting for Akash-Upade, shraddhamahindrakar217-cloud + own T4-017 |
 
-## Allowed Files
+## What I Can Work On While Waiting
 
-- `packages/ai/config/**`
-- `packages/ai/prompts/**`
-- `packages/ai/evaluation/**`
-- Model configuration, fallback chain, and prompt templates
+- T4-017 backup (evaluation dataset)
+- Prompt template design
+- PR reviews for team-ai-verification
 
-## Do Not Modify
+## What Unlocks After My Tasks
 
-- Root monorepo configuration
-- Model abstraction layer (owned by sumeetmore334-rgb)
-- Task files or team guides
-- Other teams' workspace packages
+| My Task | Downstream Task | Team |
+|---------|----------------|------|
+| T4-004 | T4-003 (fallback chain integration) | team-ai-verification |
+| T4-017 | T4-018 (Evaluation Tests) | team-ai-verification |
+| T4-018 | T4-019 (Integration Tests) | team-ai-verification |
+
+## What I Must Not Modify
+
+- `packages/schemas/` — owned by team-core
+- `services/core/` — owned by team-core
+- `connectors/` — owned by team-connectors
+- `services/intelligence/` — owned by team-intelligence
+- `apps/web/` — owned by team-product
 
 ## Branch Naming
 
@@ -45,7 +60,7 @@
 
 ## Who Reviews
 
-1. Team Head Intern: sumeetmore334-rgb (sumeetmore334-rgb)
+1. Team Head Intern: sumeetmore334-rgb
 2. Technical Architect: Ojas (ojas1216)
 
 ## How to Report Blockers

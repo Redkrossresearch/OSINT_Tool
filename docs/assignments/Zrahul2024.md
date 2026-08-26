@@ -10,28 +10,41 @@
 
 ## Primary Tasks
 
-| Task ID | Title | Difficulty | Dependencies | What to do |
-|---------|-------|------------|--------------|------------|
-| T1-007 | Source Schema | Low | T1-003 | Define Source reference types |
-| T1-008 | Observation Schema | Medium | T1-003, T1-007 | Define Observation types (contract between teams) |
-| T1-010 | Evidence Provenance Model | Medium | T1-003 | Define Provenance chain types |
+| Task ID | Title | Why | Dependencies | Effort | Expected Start Condition | Expected Completion Condition | Acceptance Criteria | Reviewer | Expected Handoff |
+|---------|-------|-----|--------------|--------|--------------------------|-------------------------------|---------------------|----------|------------------|
+| T1-007 | Source Schema | Source types needed | T1-003 | 1 | T1-003 done | Source types defined | Source schema validates correctly with Zod | Preetam-06 | Unblocks T1-008, T1-009 |
+| T1-008 | Observation Schema | CRITICAL: unblocks Teams 2,3 | T1-003, T1-007 | 2 | T1-007 done | Observation types defined | Observation schema validates correctly, contract between teams | Preetam-06 | Unblocks T2-001, T2-005 through T2-010, T3-003, T3-007 |
+| T1-010 | Evidence Provenance Model | Provenance types needed | T1-003 | 1 | T1-003 done | Provenance types defined | Provenance schema validates correctly | Preetam-06 | None |
 
-## Backup Tasks
+## What I Am Waiting For
 
-- None
+| Blocked Task | Depends On | Status |
+|-------------|------------|--------|
+| T1-007 | T1-003 (Shared Zod Schema Package) | Waiting for Dinesh-Kumar-Ved |
+| T1-008 | T1-007 (Source Schema) | Blocked until T1-007 done |
+| T1-010 | T1-003 (Shared Zod Schema Package) | Waiting for Dinesh-Kumar-Ved |
 
-## Allowed Files
+## What I Can Work On While Waiting
 
-- `packages/shared-schemas/**` (schema definitions)
-- Source, Observation, and Provenance type definitions
-- Zod validators for observation contracts
+- T1-008 backup (observation schema review)
+- Observation contract design
+- PR reviews for team-core members
 
-## Do Not Modify
+## What Unlocks After My Tasks
 
-- Root monorepo configuration
-- Task files or team guides
-- Other teams' workspace packages
-- Case or Investigation schemas (owned by other interns)
+| My Task | Downstream Task | Team |
+|---------|----------------|------|
+| T1-008 | T2-001 (Connector Interface) | team-connectors |
+| T1-008 | T2-005 through T2-010 (all connectors) | team-connectors |
+| T1-008 | T3-003 (Entity Extraction) | team-intelligence |
+| T1-008 | T3-007 (Relationship Extraction) | team-intelligence |
+
+## What I Must Not Modify
+
+- `connectors/` — owned by team-connectors
+- `services/intelligence/` — owned by team-intelligence
+- `services/ai/` — owned by team-ai-verification
+- `apps/web/` — owned by team-product
 
 ## Branch Naming
 
@@ -43,7 +56,7 @@
 
 ## Who Reviews
 
-1. Team Head Intern: Preetam-06 (Preetam-06)
+1. Team Head Intern: Preetam-06
 2. Technical Architect: Ojas (ojas1216)
 
 ## How to Report Blockers

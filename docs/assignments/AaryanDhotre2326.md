@@ -10,28 +10,38 @@
 
 ## Primary Tasks
 
-| Task ID | Title | Difficulty | Dependencies | What to do |
-|---------|-------|------------|--------------|------------|
-| T2-007 | DNS/RDAP Connector | Medium | T2-001, T1-008 | DNS and RDAP lookup |
-| T2-008 | Certificate Intelligence Connector | Medium | T2-001, T1-008 | CT log connector |
+| Task ID | Title | Why | Dependencies | Effort | Expected Start Condition | Expected Completion Condition | Acceptance Criteria | Reviewer | Expected Handoff |
+|---------|-------|-----|--------------|--------|--------------------------|-------------------------------|---------------------|----------|------------------|
+| T2-007 | DNS/RDAP Connector | DNS intelligence | T2-001, T1-008 | 2 | T2-001 done | DNS records returned | DNS/RDAP lookups return valid records | riddhisawant305-jpg | T2-016 |
+| T2-008 | Certificate Intelligence Connector | CT log data | T2-001, T1-008 | 2 | T2-001 done | CT data returned | Certificate transparency data retrieved and normalized | riddhisawant305-jpg | T2-016 |
 
-## Backup Tasks
+## What I Am Waiting For
 
-- T2-015: Connector Security Validation
+| Blocked Task | Depends On | Status |
+|-------------|------------|--------|
+| T2-007 | T2-001 (Connector Interface), T1-008 (Observation Schema) | Waiting for riddhisawant305-jpg, Zrahul2024 |
+| T2-008 | T2-001 (Connector Interface), T1-008 (Observation Schema) | Waiting for riddhisawant305-jpg, Zrahul2024 |
 
-## Allowed Files
+## What I Can Work On While Waiting
 
-- `packages/connectors/dns/**`
-- `packages/connectors/certificate/**`
-- DNS/RDAP lookup utilities
-- Certificate transparency log parsing
+- T2-017 backup (integration tests)
+- Connector fixtures and test data
+- PR reviews for team-connectors
 
-## Do Not Modify
+## What Unlocks After My Tasks
 
-- Root monorepo configuration
-- Connector interface (owned by riddhisawant305-jpg)
-- Task files or team guides
-- Other teams' workspace packages
+| My Task | Downstream Task | Team |
+|---------|----------------|------|
+| T2-007 | T2-016 (Unit Tests) | team-connectors |
+| T2-008 | T2-016 (Unit Tests) | team-connectors |
+
+## What I Must Not Modify
+
+- `packages/schemas/` — owned by team-core
+- `services/core/` — owned by team-core
+- `services/intelligence/` — owned by team-intelligence
+- `services/ai/` — owned by team-ai-verification
+- `apps/web/` — owned by team-product
 
 ## Branch Naming
 
@@ -43,7 +53,7 @@
 
 ## Who Reviews
 
-1. Team Head Intern: riddhisawant305-jpg (riddhisawant305-jpg)
+1. Team Head Intern: riddhisawant305-jpg
 2. Technical Architect: Ojas (ojas1216)
 
 ## How to Report Blockers

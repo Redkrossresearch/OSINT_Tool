@@ -10,29 +10,41 @@
 
 ## Primary Tasks
 
-| Task ID | Title | Difficulty | Dependencies | What to do |
-|---------|-------|------------|--------------|------------|
-| T5-003 | Dashboard | Medium | T5-002, T1-017 | Dashboard and case list |
-| T5-004 | Case Creation | Medium | T5-002, T1-017 | Case creation form |
-| T5-005 | Investigation Creation | Medium | T5-002, T1-017, T1-005 | Investigation creation form |
+| Task ID | Title | Why | Dependencies | Effort | Expected Start Condition | Expected Completion Condition | Acceptance Criteria | Reviewer | Expected Handoff |
+|---------|-------|-----|--------------|--------|--------------------------|-------------------------------|---------------------|----------|------------------|
+| T5-003 | Dashboard | Main view | T5-002, T1-017 | 2 | Layout + API done | Cases displayed | Dashboard shows case list from API | Ishauparkar13 | None |
+| T5-004 | Case Creation | Case workflow | T5-002, T1-017 | 2 | Layout + API done | Form works | Case creation form submits to API | Ishauparkar13 | None |
+| T5-005 | Investigation Creation | Investigation workflow | T5-002, T1-017, T1-005 | 2 | Layout + API + schema done | Form works | Investigation creation form submits to API | Ishauparkar13 | None |
 
-## Backup Tasks
+## What I Am Waiting For
 
-- T5-015: Error/Loading States
+| Blocked Task | Depends On | Status |
+|-------------|------------|--------|
+| T5-003 | T5-002 (Application Layout), T1-017 (Core API) | Waiting for Ishauparkar13, Preetam-06 |
+| T5-004 | T5-002 (Application Layout), T1-017 (Core API) | Waiting for Ishauparkar13, Preetam-06 |
+| T5-005 | T5-002, T1-017, T1-005 (Investigation Schema) | Waiting for Ishauparkar13, Preetam-06, ANDY15K |
 
-## Allowed Files
+## What I Can Work On While Waiting
 
-- `apps/web/components/dashboard/**`
-- `apps/web/components/cases/**`
-- `apps/web/components/investigations/**`
-- Dashboard, case creation, and investigation creation UI
+- T5-015 backup (error states)
+- Component design and mockups
+- PR reviews for team-product
 
-## Do Not Modify
+## What Unlocks After My Tasks
 
-- Root monorepo configuration
-- Application layout (owned by Ishauparkar13)
-- Task files or team guides
-- Other teams' workspace packages
+| My Task | Downstream Task | Team |
+|---------|----------------|------|
+| T5-003 | User can view dashboard | team-product |
+| T5-004 | User can create cases | team-product |
+| T5-005 | User can create investigations | team-product |
+
+## What I Must Not Modify
+
+- `packages/schemas/` — owned by team-core
+- `services/core/` — owned by team-core
+- `connectors/` — owned by team-connectors
+- `services/intelligence/` — owned by team-intelligence
+- `services/ai/` — owned by team-ai-verification
 
 ## Branch Naming
 
@@ -44,7 +56,7 @@
 
 ## Who Reviews
 
-1. Team Head Intern: Ishauparkar13 (Ishauparkar13)
+1. Team Head Intern: Ishauparkar13
 2. Technical Architect: Ojas (ojas1216)
 
 ## How to Report Blockers

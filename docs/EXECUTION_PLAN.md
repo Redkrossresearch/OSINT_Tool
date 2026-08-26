@@ -15,7 +15,7 @@
 | Task | Owner | Difficulty |
 |---|---|---|
 | T1-001 Repository/Monorepo Foundation | Preetam-06 | Foundation |
-| T1-002 Workspace/Package Configuration | Preetam-006 | Foundation |
+| T1-002 Workspace/Package Configuration | Preetam-06 | Foundation |
 | T1-003 Shared Zod Schema Package | Dinesh-Kumar-Ved | Foundation |
 | T1-004 Case Schema | Dinesh-Kumar-Ved | Schema |
 | T1-006 Objective Schema | Dinesh-Kumar-Ved | Schema |
