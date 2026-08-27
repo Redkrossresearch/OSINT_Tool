@@ -63,7 +63,9 @@
 | team-ai-verification | `team-ai-verification` | 19165670 | closed | push | ojas1216, sumeetmore334-rgb, anujmore2006-collab, Akash-Upade, shraddhamahindrakar217-cloud |
 | team-product | `team-product` | 19165671 | closed | push | ojas1216, Ishauparkar13, aryanbhosale20, dakshjadyar, Deepkasare, krishnasondigala-sys |
 
-**Note:** Team members show as "pending" until they accept GitHub invitations.
+**Note:** 20 intern team memberships are `active`. 6 are `pending` (awaiting org-invitation acceptance): Zrahul2024, jadhavsarthak374-ai, ANDY15K (team-core), sumeetmore334-rgb, anujmore2006-collab, Akash-Upade (team-ai-verification).
+
+**Username corrections applied:** `lahanesakshi-create` (Team 3, active) and `khushishukla3008-star` (Team 5, active) — both verified on GitHub; see `docs/ROSTER_VERIFICATION.md`.
 
 ---
 
@@ -114,8 +116,7 @@ Enforced via: documentation, PR workflow, CODEOWNERS, CI, team discipline.
 | Harsh permission reduction | Pending | Web UI by org owner |
 | Upasana1611 review | Pending | Human decision |
 | PiyushBabele1 review | Pending | Human decision |
-| lahanesakshi-create invitation | Pending | Intern accepting invitation |
-| khushishukla3008-star invitation | Pending | Intern accepting invitation |
+| Org invitations — Zrahul2024, jadhavsarthak374-ai, ANDY15K, sumeetmore334-rgb, anujmore2006-collab, Akash-Upade | Pending | Intern accepting invitation |
 
 ---
 

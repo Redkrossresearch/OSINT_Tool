@@ -1,6 +1,6 @@
 # Access Control — Redkross OSINT Investigation Platform
 
-**Last Updated:** 25 August 2026
+**Last Updated:** 26 August 2026
 **Authority:** This document is the authoritative access structure for `Redkrossresearch/OSINT_Tool`.
 
 ---
@@ -203,19 +203,76 @@ In case of security incident or urgent governance need:
 
 ---
 
-## Current Permission Matrix
+## Current Permission Matrix (26 August 2026)
+
+**Note:** Private-repo GitHub permissions are repository-wide. Team branches provide **logical ownership**, not folder-level security. Effective write access for interns flows through active team membership.
+
+### Leadership
 
 | Username | Role | Repo Permission | Team Membership | Notes |
 |---|---|---|---|---|
 | shivammittal2403 | CEO | admin | — | Full admin |
 | ojas1216 | Tech Architect | admin | technical-admins | Full admin |
 | harsh01harsh | Director | admin* | directors | *Needs reduction to read via web UI |
-| Upasana1611 | Pending | read | — | Awaiting Excel roster |
-| Preetam-06 | Pending | write | — | Awaiting Excel roster |
-| PiyushBabele1 | Pending | read | — | Awaiting Excel roster |
-| riddhisawant305-jpg | Pending | write | — | Awaiting Excel roster |
-| ishauparkar13 | Pending | write | — | Awaiting Excel roster |
-| hirveabhishek2006-design | Pending | write | — | Awaiting Excel roster |
-| sumeetmore334-rgb | Pending | write | — | Awaiting Excel roster |
 
-**\*ACTION REQUIRED:** Harsh's repository permission must be changed from `admin` to `read` via GitHub web UI. The API cannot modify this because Harsh is likely an organization owner. Another org owner (Shivam) must change Harsh's org role in GitHub Settings → Members.
+### Team 1 — team-core (head: Preetam-06, maintainer)
+
+| Username | Role | Team Membership | Effective Access |
+|---|---|---|---|
+| Preetam-06 | Head Intern | active (maintainer) | write |
+| Dinesh-Kumar-Ved | Intern | active | write |
+| Zrahul2024 | Intern | pending org invite | pending |
+| jadhavsarthak374-ai | Intern | pending org invite | pending |
+| ANDY15K | Intern | pending org invite | pending |
+
+### Team 2 — team-connectors (head: riddhisawant305-jpg, maintainer)
+
+| Username | Role | Team Membership | Effective Access |
+|---|---|---|---|
+| riddhisawant305-jpg | Head Intern | active (maintainer) | write |
+| yadavchinmay45-cloud | Intern | active | write |
+| AaryanDhotre2326 | Intern | active | write |
+| antarahire22-creator | Intern | active | write |
+| darshankamble0628-coder | Intern | active | write |
+
+### Team 3 — team-intelligence (head: hirveabhishek2006-design, maintainer)
+
+| Username | Role | Team Membership | Effective Access |
+|---|---|---|---|
+| hirveabhishek2006-design | Head Intern | active (maintainer) | write |
+| katkarsujal1-design | Intern | active | write |
+| raunaksin9890-gif | Intern | active | write |
+| lahanesakshi-create | Intern | active | write |
+| Pannkajyadhav333 | Intern | active | write |
+| parthvichare20 | Intern | active | write |
+
+### Team 4 — team-ai-verification (head: sumeetmore334-rgb, maintainer)
+
+| Username | Role | Team Membership | Effective Access |
+|---|---|---|---|
+| sumeetmore334-rgb | Head Intern | pending org invite (maintainer) | pending |
+| shraddhamahindrakar217-cloud | Intern | active | write |
+| anujmore2006-collab | Intern | pending org invite | pending |
+| Akash-Upade | Intern | pending org invite | pending |
+
+### Team 5 — team-product (head: Ishauparkar13, maintainer)
+
+| Username | Role | Team Membership | Effective Access |
+|---|---|---|---|
+| Ishauparkar13 | Head Intern | active (maintainer) | write |
+| aryanbhosale20 | Intern | active | write |
+| dakshjadyar | Intern | active | write |
+| Deepkasare | Intern | active | write |
+| krishnasondigala-sys | Intern | active | write |
+| khushishukla3008-star | Intern | active | write |
+
+### Non-Roster Collaborators (existing, flag for human review)
+
+| Username | Repo Permission | Status |
+|---|---|---|
+| Upasana1611 | read | FLAG — not in roster |
+| PiyushBabele1 | read | FLAG — not in roster |
+
+**\*ACTION REQUIRED (Harsh):** Change repository/org permission from `admin` to `read` via GitHub web UI. Another org owner (Shivam) must change Harsh's org role in Settings → Members.
+
+**ACTION REQUIRED (org invitations):** 6 interns must accept their organization invitation for team membership to become active: Zrahul2024, jadhavsarthak374-ai, ANDY15K (Team 1); sumeetmore334-rgb, anujmore2006-collab, Akash-Upade (Team 4).

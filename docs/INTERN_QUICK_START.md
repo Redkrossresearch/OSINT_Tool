@@ -28,6 +28,11 @@ This guide will help you get started as a developer on this project. Read it com
 
 **Your personal assignment file is the single source of truth for your work.**
 
+**Coordination references:**
+- `docs/INDIVIDUAL_ASSIGNMENTS.md` — The consolidated list of every intern's primary/secondary tasks, review responsibilities, dependencies, and definition of done.
+- `docs/MASTER_TASK_SEQUENCE.md` — The dependency-aware 12-wave execution order of all 97 tasks (which tasks run in parallel, which gate the MVP, and what to work on while blocked).
+- `docs/ROSTER_VERIFICATION.md` — Verification that your GitHub username on the authorized Excel roster matches your live GitHub account.
+
 ---
 
 ## What Is This Project?
