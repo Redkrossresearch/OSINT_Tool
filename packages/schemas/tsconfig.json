@@ -4,11 +4,13 @@
     "composite": true,
     "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": true,
     "outDir": "dist",
-    "rootDir": ".",
+    "rootDir": "src",
     "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
-    "noEmit": false
+    "noEmit": false,
+    "module": "ESNext",
+    "target": "ES2022"
   },
-  "files": []
+  "include": ["src/**/*.ts"],
+  "exclude": ["__tests__", "dist", "node_modules"]
 }
