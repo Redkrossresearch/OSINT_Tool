@@ -2,12 +2,16 @@
   "$schema": "https://opencode.ai/config.json",
   "provider": {
     "ollama": {
-      "model": "qwen3:4b",
-      "api": "http://localhost:11434"
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen2.5-coder:3b": {
+          "name": "Qwen 2.5 Coder 3B (local)"
+        }
+      }
     }
-  },
-  "env": {
-    "AI_PROVIDER": "ollama",
-    "AI_ALLOW_PAID": "false"
   }
 }
