@@ -61,6 +61,10 @@ importers:
       '@osint-tool/schemas':
         specifier: workspace:*
         version: link:../../packages/schemas
+    devDependencies:
+      tsx:
+        specifier: ^4.19.2
+        version: 4.23.12
 
   services/evidence:
     dependencies:
