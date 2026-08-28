@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Case {
+  id             String           @id @default(uuid()) @db.Uuid
+  title          String
+  description    String?
+  status         String           @default("OPEN")
+  createdBy      String           @map("created_by") @db.Uuid
+  createdAt      DateTime         @default(now()) @map("created_at")
+  updatedAt      DateTime         @updatedAt @map("updated_at")
+  investigations Investigation[]
+
+  @@map("cases")
+}
+
+model Investigation {
+  id          String        @id @default(uuid()) @db.Uuid
+  caseId      String        @map("case_id") @db.Uuid
+  state       String        @default("DRAFT")
+  plan        Json?
+  createdAt   DateTime      @default(now()) @map("created_at")
+  updatedAt   DateTime      @updatedAt @map("updated_at")
+  case        Case          @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  objectives  Objective[]
+  evidence    Evidence[]
+  auditEvents AuditEvent[]
+
+  @@index([caseId])
+  @@map("investigations")
+}
+
+model Objective {
+  id             String       @id @default(uuid()) @db.Uuid
+  investigationId String      @map("investigation_id") @db.Uuid
+  type           String
+  data           Json
+  createdAt      DateTime     @default(now()) @map("created_at")
+  updatedAt      DateTime     @updatedAt @map("updated_at")
+  investigation  Investigation @relation(fields: [investigationId], references: [id], onDelete: Cascade)
+
+  @@index([investigationId])
+  @@map("objectives")
+}
+
+model Evidence {
+  id             String         @id @default(uuid()) @db.Uuid
+  investigationId String        @map("investigation_id") @db.Uuid
+  type           String
+  source         Json
+  content        String
+  metadata       Json
+  hash           String         @db.Char(64)
+  createdAt      DateTime       @default(now()) @map("created_at")
+  investigation  Investigation  @relation(fields: [investigationId], references: [id], onDelete: Cascade)
+  observations   Observation[]
+
+  @@index([investigationId])
+  @@map("evidence")
+}
+
+model Observation {
+  id          String       @id @default(uuid()) @db.Uuid
+  evidenceId  String       @map("evidence_id") @db.Uuid
+  type        String
+  data        Json
+  confidence  Decimal      @db.Decimal(3, 2)
+  sourceRef   Json         @map("source_ref")
+  timestamp   DateTime
+  evidence    Evidence     @relation(fields: [evidenceId], references: [id], onDelete: Cascade)
+
+  @@index([evidenceId])
+  @@map("observations")
+}
+
+model AuditEvent {
+  id             String        @id @default(uuid()) @db.Uuid
+  investigationId String       @map("investigation_id") @db.Uuid
+  action         String
+  actor          String
+  timestamp      DateTime      @default(now())
+  details        Json
+  investigation  Investigation @relation(fields: [investigationId], references: [id], onDelete: Cascade)
+
+  @@index([investigationId, timestamp])
+  @@map("audit_events")
+}

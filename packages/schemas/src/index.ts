@@ -2,6 +2,7 @@ export * from './case.js';
 export * from './objective.js';
 export * from './source.js';
 export * from './observation.js';
+export * from './evidence.js';
 export * from './provenance.js';
 export * from './investigation.js';
 export * from './audit-event.js';

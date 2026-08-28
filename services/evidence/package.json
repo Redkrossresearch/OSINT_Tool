@@ -7,10 +7,13 @@
     "build": "tsc --build tsconfig.json",
     "dev": "tsc --build tsconfig.json --watch",
     "lint": "eslint . --no-error-on-unmatched-pattern",
-    "test": "node --test",
+    "test": "node --import tsx --test src/**/*.test.ts",
     "typecheck": "tsc --build tsconfig.json --pretty false"
   },
   "dependencies": {
     "@osint-tool/schemas": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
   }
 }
