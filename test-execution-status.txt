@@ -1,0 +1,189 @@
+OSINT TOOL - TEST EXECUTION STATUS
+==================================
+Generated: 2026-08-28
+Updated:   2026-08-28 (post-fix refresh)
+Branch: team/1-core
+Scope reviewed: T1-001 through T1-019
+
+IMPORTANT
+---------
+This file records test execution and infrastructure checks. It is not a replacement
+for task approval or a task-status document. Markdown files were not modified.
+
+FIXES APPLIED SINCE PRIOR REPORT
+--------------------------------
+1. state-machine cross-package import (relates to T1-014):
+   services/core/src/lib/state-machine.ts and
+   services/core/src/__tests__/state-machine.test.ts now import from
+   '@osint-tool/schemas' instead of the raw
+   '../../../../packages/schemas/src/*.js' path. This was the only build-breaking
+   error and is now resolved (lifecycle tests pass).
+2. .gitignore Prisma migration lock (relates to T1-015 / CI):
+   Removed the rule ignoring
+   'services/core/prisma/migrations/**/migration_lock.toml'. That file must be
+   committed or 'prisma migrate deploy' fails in CI/production. It is not a secret.
+
+TASK COVERAGE
+-------------
+T1-001  Repository/Monorepo Foundation
+        Status: PASS.
+        Evidence: pnpm build and pnpm lint pass for all 11 packages.
+
+T1-002  Workspace/Package Configuration
+        Status: PASS.
+        Evidence: pnpm test, pnpm typecheck, and pnpm build recognize all 11 packages.
+
+T1-003  Shared Zod Schema Package
+        Status: PASS.
+        Evidence: packages/schemas test run passed (118 tests); package build and
+        typecheck passed; barrel exports all 9 schemas.
+
+T1-004  Case Schema
+        Status: PASS.
+        Evidence: Case schema tests passed in the schemas test run.
+
+T1-005  Investigation Schema
+        Status: PASS.
+        Evidence: Investigation schema tests passed in the schemas test run.
+
+T1-006  Objective Schema
+        Status: PASS.
+        Evidence: Objective schema tests passed in the schemas test run.
+
+T1-007  Source Schema
+        Status: PASS.
+        Evidence: SourceRef schema tests passed in the schemas test run.
+
+T1-008  Observation Schema
+        Status: PASS.
+        Evidence: Observation schema tests passed in the schemas test run.
+
+T1-009  Evidence Schema
+        Status: PASS.
+        Evidence: Evidence schema tests passed in the schemas test run.
+
+T1-010  Evidence Provenance Model
+        Status: PASS.
+        Evidence: Provenance schema tests passed; provenance service behavior passed.
+
+T1-011  Evidence Hashing
+        Status: PASS.
+        Evidence: 5 hashing tests passed, including tamper detection.
+
+T1-012  Evidence Metadata
+        Status: PASS.
+        Evidence: Evidence metadata schema tests passed.
+
+T1-013  Audit Event Model
+        Status: PASS.
+        Evidence: Audit event schema tests passed.
+
+T1-014  Investigation Lifecycle
+        Status: PASS.
+        Evidence: 5 lifecycle/state-machine tests passed (valid transitions, invalid
+        rejection, audit event creation). Import bug fixed (see FIXES APPLIED).
+
+T1-015  Database/Prisma Foundation
+        Status: STATIC CHECKS PASS; LIVE DATABASE CHECK NOT RUN.
+        Evidence: Prisma generate passed; Prisma validate passed with a temporary
+        local DATABASE_URL; Docker Compose configuration passed. .gitignore lock-file
+        bug fixed (see FIXES APPLIED).
+
+T1-016  Core Service Structure
+        Status: PASS.
+        Evidence: 7 service tests passed for Case, Investigation, and Objective.
+
+T1-017  Core API
+        Status: PASS for API boundary tests; live database API test not run.
+        Evidence: 4 API route tests passed for success, validation, not-found, and
+        unexpected-error responses.
+
+T1-018  Evidence API
+        Status: PASS for service/API logic; live database API test not run.
+        Evidence: 7 evidence tests passed in total: 5 hash tests plus 2 service tests
+        covering hash/provenance and immutable update/delete behavior.
+
+T1-019  Validation/Error Handling
+        Status: PASS.
+        Evidence: API tests passed for structured 400, 404, and 500 responses; lint,
+        typecheck, and build passed.
+
+COMMANDS RUN (this session)
+---------------------------
+PASS  pnpm install
+      Installed/linked all workspace packages (per-package node_modules via pnpm).
+
+PASS  pnpm -C packages/schemas build
+      Built @osint-tool/schemas (dist) successfully.
+
+PASS  pnpm -C services/core db:generate
+      Prisma client generated.
+
+PASS  pnpm test   (root, all 11 packages via turbo)
+      Tasks: 11 successful, 11 total.
+      Test counts: schemas 118 passed, core 16 passed, evidence 7 passed.
+      Total: 141 passed, 0 failed.
+      (Other packages: no tests defined; no failures.)
+
+PASS  pnpm typecheck   (root, all 11 packages via turbo)
+      Tasks: 11 successful, 11 total.
+
+PASS  pnpm build   (root, all 11 packages via turbo)
+      Tasks: 11 successful, 11 total.
+
+PASS  pnpm -C packages/schemas lint
+PASS  pnpm -C services/core lint
+PASS  pnpm -C services/evidence lint
+      ESLint clean for all packages containing source.
+
+PASS  git diff --check
+      No trailing-whitespace / newline-at-EOF issues in changed files.
+
+BLOCKED  docker compose ps / up -d
+          Docker Desktop/daemon is not running. No database container was available.
+
+NOT RUN  docker compose up -d postgres
+NOT RUN  pnpm --filter @osint-tool/core db:migrate
+NOT RUN  Live CRUD/API tests against PostgreSQL
+NOT RUN  Database integration tests requiring a running PostgreSQL container
+
+DOCKER AND POSTGRES SETUP NEEDED
+--------------------------------
+Docker/PostgreSQL is NOT needed for unit tests, typecheck, lint, or build.
+It IS needed for Prisma migrations and real CRUD/API integration tests (T1-021).
+
+After starting Docker Desktop, run from the repository root:
+
+1. cp .env.example .env
+2. docker compose up -d postgres
+3. pnpm --filter @osint-tool/core db:migrate
+4. pnpm test
+
+The current Docker Compose service is named "postgres" and exposes port 5432.
+
+KNOWN LIMITATION / DEFERRED TO T1-021
+-------------------------------------
+The following are runtime/integration concerns and were intentionally NOT changed,
+because the user will integrate them during T1-021 (only build/test/audit needed now):
+- Evidence API (T1-018) routes/service exist and are unit-tested but are not yet
+  mounted in a running server (no services/evidence/src/index.ts; core does not
+  mount the evidence router).
+- No server bootstrap (app.listen) is present; services are exercised via unit tests.
+- Evidence package has validation but no standalone error-handler middleware.
+- No seed script exists yet for T1-015.
+These do not break build/test/audit.
+
+GIT STATUS AT REPORT CREATION
+-----------------------------
+Local HEAD is 1 commit ahead of origin/team/1-core (user commit 262dcf0).
+Uncommitted changes present:
+- Modified: .gitignore (migration_lock fix)
+- Modified: services/core/src/lib/state-machine.ts (import fix)
+- Modified: services/core/src/__tests__/state-machine.test.ts (import fix)
+- Modified: pnpm-lock.yaml (from pnpm install)
+- Plus the uncommitted T1-016 through T1-019 implementation files:
+  services/core/src/index.ts, services/core/src/middleware/,
+  services/core/src/routes/, services/core/src/services/,
+  services/evidence/src/routes/, services/evidence/src/services/,
+  and updated package.json / tsconfig.json for both services.
+No commit or push was performed.

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { InvestigationState } from '../../../../packages/schemas/src/investigation.ts';
+import { InvestigationState } from '@osint-tool/schemas';
 import {
   canTransition,
   createTransitionAuditEvent,
@@ -18,12 +18,12 @@ describe('Investigation lifecycle state machine', () => {
       investigation_id: '123e4567-e89b-12d3-a456-426614174010',
       type: 'PERSON',
       name: 'Jane Doe',
-      created_at: '2026-08-28T00:00:00.000Z',
-      updated_at: '2026-08-28T00:00:00.000Z',
+      created_at: new Date('2026-08-28T00:00:00.000Z'),
+      updated_at: new Date('2026-08-28T00:00:00.000Z'),
     },
-    plan: [],
-    created_at: '2026-08-28T00:00:00.000Z',
-    updated_at: '2026-08-28T00:00:00.000Z',
+    plan: [] as string[],
+    created_at: new Date('2026-08-28T00:00:00.000Z'),
+    updated_at: new Date('2026-08-28T00:00:00.000Z'),
   } as const;
 
   it('allows the defined valid transitions', () => {
@@ -47,7 +47,11 @@ describe('Investigation lifecycle state machine', () => {
   });
 
   it('updates investigation state and creates an audit event for valid transitions', () => {
-    const result = transitionInvestigation(baseInvestigation, InvestigationState.PLANNING, 'analyst-001');
+    const result = transitionInvestigation(
+      baseInvestigation,
+      InvestigationState.PLANNING,
+      'analyst-001',
+    );
 
     assert.equal(result.investigation.state, InvestigationState.PLANNING);
     assert.equal(result.auditEvent?.action, 'STATE_CHANGED');
@@ -58,12 +62,20 @@ describe('Investigation lifecycle state machine', () => {
 
   it('throws for invalid transitions', () => {
     assert.throws(() => {
-      transitionInvestigation({ ...baseInvestigation, state: InvestigationState.COMPLETE }, InvestigationState.VERIFYING, 'analyst-001');
+      transitionInvestigation(
+        { ...baseInvestigation, state: InvestigationState.COMPLETE },
+        InvestigationState.VERIFYING,
+        'analyst-001',
+      );
     });
   });
 
   it('creates a transition audit event with the correct payload', () => {
-    const auditEvent = createTransitionAuditEvent(baseInvestigation, InvestigationState.PLANNING, 'analyst-001');
+    const auditEvent = createTransitionAuditEvent(
+      baseInvestigation,
+      InvestigationState.PLANNING,
+      'analyst-001',
+    );
 
     assert.equal(auditEvent.action, 'STATE_CHANGED');
     assert.equal(auditEvent.investigation_id, baseInvestigation.id);

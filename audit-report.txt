@@ -1,0 +1,113 @@
+OSINT TOOL - AUDIT REPORT (TEAM 1 - CORE)
+=========================================
+Generated: 2026-08-28
+Branch: team/1-core
+Scope audited: T1-001 through T1-019 (base layer)
+Auditor: opencode (local agent, free Ollama model policy)
+
+PURPOSE
+-------
+This report audits the Team-1 base layer (shared Zod schemas + core/evidence
+services) for correctness, security, and task completeness up to T1-019. It
+covers static review against docs/tasks/team-1-core.md and dynamic verification
+(typecheck, build, test, lint). It does NOT modify any Markdown files.
+
+EXECUTIVE SUMMARY
+-----------------
+- Base layer is COMPLETE and ERROR-FREE for build, test, and audit scope.
+- Typecheck: 11/11 packages pass. Build: 11/11 pass. Tests: 141 pass, 0 fail.
+- Lint: clean for schemas/core/evidence.
+- Two defects were found and fixed during the audit:
+    1. state-machine cross-package import (build-breaking) -> fixed.
+    2. .gitignore ignoring Prisma migration_lock.toml (CI-breaking) -> fixed.
+- Runtime/integration wiring (Evidence API mount, server bootstrap, seed script,
+  evidence error-handler) is intentionally deferred to T1-021 per plan and does
+  not break build/test/audit.
+
+METHODOLOGY
+-----------
+- Read canonical task definitions in docs/tasks/team-1-core.md.
+- Inspected implemented files across packages/schemas, services/core, services/evidence.
+- Executed: pnpm install; pnpm -C packages/schemas build; pnpm -C services/core
+  db:generate; pnpm test (root); pnpm typecheck (root); pnpm build (root);
+  pnpm -C <pkg> lint for each source package; git diff --check.
+
+PER-TASK AUDIT FINDINGS
+-----------------------
+T1-001 Repository/Monorepo Foundation ......... PASS - pnpm build/lint pass.
+T1-002 Workspace/Package Configuration ........ PASS - all 11 packages recognized.
+T1-003 Shared Zod Schema Package .............. PASS - built; barrel exports 9 schemas.
+T1-004 Case Schema ............................ PASS - tests pass.
+T1-005 Investigation Schema ................... PASS - tests pass.
+T1-006 Objective Schema ....................... PASS - tests pass.
+T1-007 Source Schema .......................... PASS - tests pass.
+T1-008 Observation Schema ..................... PASS - tests pass.
+T1-009 Evidence Schema ........................ PASS - tests pass.
+T1-010 Evidence Provenance Model .............. PASS - schema + service tests pass.
+T1-011 Evidence Hashing ....................... PASS - 5 hash tests (tamper detected).
+T1-012 Evidence Metadata ...................... PASS - schema tests pass.
+T1-013 Audit Event Model ...................... PASS - schema tests pass.
+T1-014 Investigation Lifecycle ................ PASS - 5 state-machine tests pass
+                                                  (import defect fixed).
+T1-015 Database/Prisma Foundation ............. PASS (static) / NOT RUN (live)
+                                                  - generate + validate pass;
+                                                    migration_lock gitignore fixed.
+T1-016 Core Service Structure ................. PASS - 7 service tests pass.
+T1-017 Core API ............................... PASS (boundary) - 4 route tests pass.
+T1-018 Evidence API ........................... PASS (logic) - 7 evidence tests pass.
+T1-019 Validation/Error Handling .............. PASS - structured 400/404/500;
+                                                  lint/typecheck/build pass.
+
+SECURITY AUDIT
+--------------
+- No hardcoded secrets or API keys found in source. Database URL is read from
+  environment (.env.example, not committed).
+- Input validation is enforced via shared Zod schemas and the core validation
+  middleware; invalid requests map to structured 400 responses (verified by test).
+- Error handling returns structured JSON with safe internal-error messages
+  (unexpected errors are not leaked to clients - verified by test).
+- No outbound HTTP/fetch calls exist in the base layer, so SSRF surface is absent
+  here (connectors in other teams own enrichment). No rate-limit logic is required
+  at this layer yet.
+- Database access uses Prisma (parameterized) with injected PrismaClient;
+  service constructors accept the DB dependency (testable, no global singleton
+  misuse in unit tests).
+- Prisma migration_lock.toml was being gitignored (would break CI deploy); fixed
+  by removing that ignore rule. The file is not a secret.
+- No secrets were committed; git status shows only source/config/test changes.
+
+CODE QUALITY
+------------
+- ESLint: clean for packages/schemas, services/core, services/evidence.
+- TypeScript: strict typecheck passes across all packages.
+- Unit tests use a mocked PrismaClient (injected), so they are hermetic and need
+  no running database; 141 tests pass deterministically.
+- Code follows existing patterns (dependency-injected services, Express routers,
+  Zod-validated request bodies). No unnecessary abstractions introduced.
+
+KNOWN GAPS / DEFERRED TO T1-021 (NOT ERRORS)
+--------------------------------------------
+A. Evidence API (T1-018) is implemented and unit-tested but not yet mounted in a
+   running server (no services/evidence/src/index.ts; core does not mount it).
+B. No server bootstrap (app.listen) exists; services are verified via unit tests.
+C. Evidence package has validation but no standalone error-handler middleware
+   (covered only if mounted under core's errorHandler during T1-021).
+D. No seed script for T1-015 yet.
+None of A-D break build/test/audit. They are integration/runtime work for T1-021.
+
+ENVIRONMENT PREREQUISITES (USER ACTION)
+---------------------------------------
+Required only for running the services and for T1-021 integration tests, NOT for
+unit tests/build/lint/typecheck:
+1. cp .env.example .env
+2. docker compose up -d postgres   (PostgreSQL 16; port 5432)
+3. pnpm --filter @osint-tool/core db:migrate   (applies 0001_init)
+4. pnpm --filter @osint-tool/core db:generate  (re-run if node_modules wiped)
+
+CONCLUSION
+----------
+The Team-1 base layer through T1-019 is audited and verified: build, typecheck,
+test (141/0), and lint are green. Two defects (state-machine import, Prisma
+migration_lock gitignore) were identified and corrected. Remaining items are
+integration concerns owned by T1-021. No Markdown documentation was modified and
+no commit/push was performed.

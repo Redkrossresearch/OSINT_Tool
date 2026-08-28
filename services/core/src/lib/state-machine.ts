@@ -4,8 +4,15 @@
  * This is intentionally a pure, database-independent implementation because the
  * Prisma/database foundation is owned by T1-015 and not yet implemented.
  */
-import { AuditAction, AuditEvent, AuditEventCreate, createStateChangeAuditDetails, freezeAuditEvent } from '../../../../packages/schemas/src/audit-event.ts';
-import { Investigation, InvestigationState } from '../../../../packages/schemas/src/investigation.ts';
+import {
+  AuditAction,
+  AuditEvent,
+  AuditEventCreate,
+  createStateChangeAuditDetails,
+  freezeAuditEvent,
+  Investigation,
+  InvestigationState,
+} from '@osint-tool/schemas';
 
 const VALID_TRANSITIONS: Record<InvestigationState, InvestigationState[]> = {
   [InvestigationState.DRAFT]: [InvestigationState.PLANNING],

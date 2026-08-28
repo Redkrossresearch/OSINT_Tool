@@ -41,7 +41,8 @@ coverage/
 *.gguf
 
 # Prisma
-services/core/prisma/migrations/**/migration_lock.toml
+# NOTE: migration_lock.toml must be committed (it is not a secret) so that
+# `prisma migrate deploy` works in CI/production. Do not ignore it.
 
 # Temporary
 tmp/
