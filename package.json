@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
+    "test:integration": "pnpm -C tests test:integration",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

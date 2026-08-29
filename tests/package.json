@@ -1,0 +1,19 @@
+{
+  "name": "@osint-tool/integration-tests",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:integration": "node --import tsx --test --test-concurrency=1 integration/**/*.test.ts"
+  },
+  "dependencies": {
+    "@osint-tool/schemas": "workspace:*",
+    "express": "^5.1.0",
+    "@prisma/client": "^6.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2"
+  }
+}
