@@ -419,4 +419,14 @@ SOURCE REF (embedded)
 - Note: delivered as a single .txt because AGENTS.md classifies all .md files as
   read-only. Convert to docs/api/* , docs/architecture/* , DEVELOPMENT.md when
   Markdown authoring is authorized.
+
+--------------------------------------------------------------------------------
+14. DOCUMENTATION CHANGES (Team 1 follow-up)
+--------------------------------------------------------------------------------
+- 2026-08-29 — Team 1 (preetam-06) corrected the root DEVELOPMENT.md,
+  section "4. Set Up Database". The previously documented repo-root commands
+  `pnpm db:migrate` / `pnpm db:seed` do not exist at the root. Replaced with the
+  real command `pnpm --filter @osint-tool/core db:migrate` (migrations live in the
+  @osint-tool/core package). Removed `pnpm db:seed` because no seed script exists.
+  Recorded here so all Team 1 members know which .md file was changed.
 ================================================================================
