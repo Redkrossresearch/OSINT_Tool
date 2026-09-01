@@ -11,7 +11,6 @@
     "noEmit": false
   },
   "files": [],
-  "references": [
-    { "path": "../../packages/schemas" }
-  ]
+  "include": ["src/**/*.ts"],
+  "references": [{ "path": "../../packages/schemas" }]
 }

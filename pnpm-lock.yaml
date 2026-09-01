@@ -55,6 +55,22 @@ importers:
       '@osint-tool/schemas':
         specifier: workspace:*
         version: link:../../packages/schemas
+      express:
+        specifier: ^5.1.0
+        version: 5.2.1
+      zod:
+        specifier: ^3.24.1
+        version: 3.25.76
+    devDependencies:
+      '@types/express':
+        specifier: ^5.0.3
+        version: 5.0.6
+      '@types/node':
+        specifier: ^22.10.0
+        version: 22.20.1
+      tsx:
+        specifier: ^4.19.2
+        version: 4.23.12
 
   services/core:
     dependencies:
