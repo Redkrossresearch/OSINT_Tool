@@ -33,9 +33,9 @@ This starts PostgreSQL and any other required services.
 
 ### 4. Set Up Database
 ```bash
-pnpm db:migrate
-pnpm db:seed
+pnpm --filter @osint-tool/core db:migrate
 ```
+> **Note (Team 1 / T1-022):** DB migrations run in the `@osint-tool/core` package. Use `pnpm --filter @osint-tool/core db:migrate`. The repo-root `pnpm db:migrate` / `pnpm db:seed` commands do not exist (no seed script), so they were removed.
 
 ### 5. Configure Environment
 ```bash

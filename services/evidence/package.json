@@ -1,0 +1,23 @@
+{
+  "name": "@osint-tool/evidence",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --build tsconfig.json",
+    "dev": "tsc --build tsconfig.json --watch",
+    "lint": "eslint . --no-error-on-unmatched-pattern",
+    "test": "node --import tsx --test src/**/*.test.ts",
+    "typecheck": "tsc --build tsconfig.json --pretty false"
+  },
+  "dependencies": {
+    "@osint-tool/schemas": "workspace:*",
+    "@prisma/client": "^6.2.1",
+    "express": "^5.1.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "tsx": "^4.19.2"
+  }
+}
