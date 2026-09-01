@@ -32,11 +32,8 @@ importers:
 
   apps/web: {}
 
-  connectors/web-fetch:
+  connectors/cert-intel:
     dependencies:
-      '@osint-tool/connectors-service':
-        specifier: workspace:*
-        version: link:../../services/connectors
       '@osint-tool/schemas':
         specifier: workspace:*
         version: link:../../packages/schemas
@@ -48,11 +45,21 @@ importers:
         specifier: ^4.19.2
         version: 4.23.12
 
-  connectors/web-search:
+  connectors/dns-rdap:
     dependencies:
-      '@osint-tool/connectors-service':
+      '@osint-tool/schemas':
         specifier: workspace:*
-        version: link:../../services/connectors
+        version: link:../../packages/schemas
+    devDependencies:
+      '@types/node':
+        specifier: ^22.10.0
+        version: 22.20.1
+      tsx:
+        specifier: ^4.19.2
+        version: 4.23.12
+
+  connectors/github-public:
+    dependencies:
       '@osint-tool/schemas':
         specifier: workspace:*
         version: link:../../packages/schemas
