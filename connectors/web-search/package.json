@@ -1,8 +1,17 @@
 {
-  "name": "@osint-tool/connectors-service",
+  "name": "@osint-tool/web-search-connector",
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "dev": "tsc --build tsconfig.json --watch",
@@ -11,12 +20,10 @@
     "typecheck": "tsc --build tsconfig.json --pretty false"
   },
   "dependencies": {
-    "@osint-tool/schemas": "workspace:*",
-    "express": "^5.1.0",
-    "zod": "^3.24.1"
+    "@osint-tool/connectors-service": "workspace:*",
+    "@osint-tool/schemas": "workspace:*"
   },
   "devDependencies": {
-    "@types/express": "^5.0.3",
     "@types/node": "^22.10.0",
     "tsx": "^4.19.2"
   }
