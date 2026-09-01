@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+    "noEmit": false,
+    "module": "ESNext",
+    "target": "ES2022",
+    "baseUrl": ".",
+    "paths": {
+      "@osint-tool/connectors-service": ["../../services/connectors/src"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["__tests__", "dist", "node_modules"],
+  "references": [{ "path": "../../packages/schemas" }, { "path": "../../services/connectors" }]
+}
