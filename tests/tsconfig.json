@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@osint-tool/connectors-service": ["../services/connectors/src"],
+      "@osint-tool/schemas": ["../packages/schemas/src"],
+      "@osint-tool/web-search-connector": ["../connectors/web-search/src"],
+      "@osint-tool/web-fetch-connector": ["../connectors/web-fetch/src"]
+    }
+  },
+  "include": ["integration/connectors/**/*.ts"]
+}
