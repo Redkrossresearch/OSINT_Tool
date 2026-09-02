@@ -7,3 +7,4 @@ export * from './framework/timeout-handler.js';
 export * from './registry/connector-registry.js';
 export * from './registry/health-checker.js';
 export * from './routes/connector.routes.js';
+export * from './security/index.js';
