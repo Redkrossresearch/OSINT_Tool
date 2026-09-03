@@ -55,8 +55,8 @@ function resolveEntities(a: Entity, b: Entity): ResolutionResult {
     return { matched: false, confidence: 0, reason: 'cross-type mismatch', evidence: [], source: 'resolver', requires_human_review: false };
   }
 
-  const normalizedA = a.canonical_name.toLowerCase().trim();
-  const normalizedB = b.canonical_name.toLowerCase().trim();
+  const normalizedA = normalize(a);
+  const normalizedB = normalize(b);
 
   if (normalizedA === normalizedB) {
     const result: ResolutionResult = {
@@ -69,6 +69,19 @@ function resolveEntities(a: Entity, b: Entity): ResolutionResult {
     };
     logMerge(a, b, result);
     return result;
+  }
+
+  // Entity types with a strict identity key (Repository owner/name, Email, IP)
+  // must NOT fuzzy-match different canonical names: only exact matches merge.
+  if (['Repository', 'Email', 'IP'].includes(a.type)) {
+    return {
+      matched: false,
+      confidence: 0,
+      reason: 'identity-key type with non-identical canonical name',
+      evidence: [],
+      source: 'resolver',
+      requires_human_review: false,
+    };
   }
 
   const aEmailSet = new Set(extractEmails(a.attributes));
@@ -131,6 +144,14 @@ function extractEmails(attrs: Record<string, unknown>): string[] {
   const raw = attrs.emails;
   if (!Array.isArray(raw)) return [];
   return raw.filter((e): e is string => typeof e === 'string');
+}
+
+function normalize(e: Entity): string {
+  let n = e.canonical_name.normalize('NFC').toLowerCase().trim();
+  if (e.type === 'Domain' && n.endsWith('.')) {
+    n = n.slice(0, -1);
+  }
+  return n;
 }
 
 function logMerge(a: Entity, b: Entity, result: ResolutionResult): void {
