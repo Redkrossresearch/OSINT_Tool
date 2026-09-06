@@ -3,11 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "dev": "tsc --build tsconfig.json --watch",
     "lint": "eslint . --no-error-on-unmatched-pattern",
-    "test": "node --test",
+    "test": "pnpm run build && node --test __tests__/entity-schema.test.mjs",
     "typecheck": "tsc --build tsconfig.json --pretty false"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
   }
 }
