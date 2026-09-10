@@ -13,7 +13,7 @@
     "build": "tsc --build tsconfig.json",
     "dev": "tsc --build tsconfig.json --watch",
     "lint": "eslint . --no-error-on-unmatched-pattern",
-    "test": "pnpm run build && node --test __tests__/entity-schema.test.mjs",
+    "test": "pnpm run build && node --test __tests__/*.test.mjs",
     "typecheck": "tsc --build tsconfig.json --pretty false"
   },
   "dependencies": {
