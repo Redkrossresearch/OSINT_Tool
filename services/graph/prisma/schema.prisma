@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum EntityType {
+  person
+  company
+  domain
+  ip
+  email
+  url
+  repository
+  technology
+  location
+}
+
+enum RelationshipType {
+  OWNS
+  WORKS_FOR
+  USES
+  HOSTED_ON
+  REGISTERED_TO
+  MENTIONS
+  ASSOCIATED_WITH
+  RESOLVES_TO
+}
+
+// Core tables remain owned by Core. Their foreign keys and the SQL-only checks
+// and scope triggers are maintained in the graph migration, not duplicate models.
+// Apply this migration after Core migrations in the same PostgreSQL schema.
+// Do not use db push/migrate dev to reconcile this partial schema against Core.
+model Entity {
+  id              String         @id
+  investigationId String         @map("investigation_id") @db.Uuid
+  type            EntityType
+  attributes      Json           @db.JsonB
+  confidence      Float          @db.DoublePrecision
+  createdAt       DateTime       @default(now()) @map("created_at") @db.Timestamp(3)
+  updatedAt       DateTime       @updatedAt @map("updated_at") @db.Timestamp(3)
+  outgoing        Relationship[] @relation("SourceEntity")
+  incoming        Relationship[] @relation("TargetEntity")
+
+  @@unique([id, investigationId, type])
+  @@index([type])
+  @@index([investigationId])
+  @@map("entities")
+}
+
+model Relationship {
+  id               String                 @id
+  investigationId  String                 @map("investigation_id") @db.Uuid
+  type             RelationshipType
+  sourceEntityId   String?                @map("source_entity_id")
+  sourceEntityType EntityType?            @map("source_entity_type")
+  sourceEvidenceId String?                @map("source_evidence_id") @db.Uuid
+  targetEntityId   String                 @map("target_entity_id")
+  targetEntityType EntityType             @map("target_entity_type")
+  confidence       Float                  @db.DoublePrecision
+  validFrom        DateTime               @default(now()) @map("valid_from") @db.Timestamp(3)
+  validTo          DateTime?              @map("valid_to") @db.Timestamp(3)
+  sourceEntity     Entity?                @relation("SourceEntity", fields: [sourceEntityId, investigationId, sourceEntityType], references: [id, investigationId, type], onDelete: Restrict, onUpdate: Restrict)
+  targetEntity     Entity                 @relation("TargetEntity", fields: [targetEntityId, investigationId, targetEntityType], references: [id, investigationId, type], onDelete: Restrict, onUpdate: Restrict)
+  evidence         RelationshipEvidence[]
+
+  @@unique([id, investigationId])
+  // Leading columns also support source-only and target-only traversal.
+  @@index([sourceEntityId, type])
+  @@index([sourceEvidenceId, type])
+  @@index([targetEntityId, type])
+  @@index([type])
+  @@index([investigationId, validTo, validFrom])
+  @@map("relationships")
+}
+
+// Position preserves the contract's array order and permits repeated evidence IDs.
+model RelationshipEvidence {
+  relationshipId  String       @map("relationship_id")
+  investigationId String       @map("investigation_id") @db.Uuid
+  position        Int
+  evidenceId      String       @map("evidence_id") @db.Uuid
+  relationship    Relationship @relation(fields: [relationshipId, investigationId], references: [id, investigationId], onDelete: Restrict, onUpdate: Restrict)
+
+  @@id([relationshipId, position])
+  @@index([evidenceId])
+  @@map("relationship_evidence")
+}
